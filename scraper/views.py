@@ -1,5 +1,7 @@
-from .forms import ContactForm
+from .forms import ContactForm, NouveauContactForm
 from django.shortcuts import render
+
+from .models import Contact
 
 
 def contact(request):
@@ -23,3 +25,20 @@ def contact(request):
 
     # Quoiqu'il arrive, on affiche la page du formulaire.
     return render(request, 'scraper/contact.html', locals())
+
+
+def nouveau_contact(request):
+    sauvegarde = False
+    form = NouveauContactForm(request.POST or None, request.FILES)
+    if form.is_valid():
+        contact = Contact()
+        contact.nom = form.cleaned_data["nom"]
+        contact.adresse = form.cleaned_data["adresse"]
+        contact.photo = form.cleaned_data["photo"]
+        contact.save()
+        sauvegarde = True
+
+    return render(request, 'scraper/contact.html', {
+        'form': form,
+        'sauvegarde': sauvegarde
+    })

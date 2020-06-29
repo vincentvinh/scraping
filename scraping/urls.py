@@ -19,5 +19,5 @@ from scraper import views as scraper_view
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('contact/', scraper_view.contact, name='contact'),
+    path('contact/', scraper_view.nouveau_contact, name='contact'),
 ]
