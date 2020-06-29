@@ -42,3 +42,11 @@ def nouveau_contact(request):
         'form': form,
         'sauvegarde': sauvegarde
     })
+
+
+def voir_contacts(request):
+    return render(
+        request,
+        'scraper/image.html',
+        {'contacts': Contact.objects.all()}
+    )
