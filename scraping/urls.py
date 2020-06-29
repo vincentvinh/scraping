@@ -15,7 +15,9 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from scraper import views as scraper_view
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('contact/', scraper_view.contact, name='contact'),
 ]
