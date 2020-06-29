@@ -1,17 +1,16 @@
-# Scrapy settings for scraper_engine project
-#
-# For simplicity, this file contains only settings considered important or
-# commonly used. You can find more settings consulting the documentation:
-#
-#     https://docs.scrapy.org/en/latest/topics/settings.html
-#     https://docs.scrapy.org/en/latest/topics/downloader-middleware.html
-#     https://docs.scrapy.org/en/latest/topics/spider-middleware.html
+import os
+import sys
+
+sys.path.append(os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), ".."))
+os.environ['DJANGO_SETTINGS_MODULE'] = 'scraping.settings'
+import django
+
+django.setup()
 
 BOT_NAME = 'scraper_engine'
 
 SPIDER_MODULES = ['scraper_engine.spiders']
 NEWSPIDER_MODULE = 'scraper_engine.spiders'
-
 
 # Crawl responsibly by identifying yourself (and your website) on the user-agent
 #USER_AGENT = 'scraper_engine (+http://www.yourdomain.com)'
@@ -62,9 +61,9 @@ ROBOTSTXT_OBEY = True
 
 # Configure item pipelines
 # See https://docs.scrapy.org/en/latest/topics/item-pipeline.html
-#ITEM_PIPELINES = {
-#    'scraper_engine.pipelines.ScraperEnginePipeline': 300,
-#}
+ITEM_PIPELINES = {
+    'scraper_engine.pipelines.ContactPipeline': 300,
+}
 
 # Enable and configure the AutoThrottle extension (disabled by default)
 # See https://docs.scrapy.org/en/latest/topics/autothrottle.html

@@ -29,7 +29,7 @@ class Migration(migrations.Migration):
                 ('auteur', models.CharField(max_length=42)),
                 ('contenu', models.TextField(null=True)),
                 ('date', models.DateTimeField(default=django.utils.timezone.now, verbose_name='Date de parution')),
-                ('categorie', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='scraper.Categorie')),
+                ('categorie', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='scraper_admin.Categorie')),
             ],
             options={
                 'ordering': ['date'],

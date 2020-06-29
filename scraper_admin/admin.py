@@ -1,6 +1,6 @@
 from django.contrib import admin
 from django.utils.text import Truncator
-from scraper.models import Categorie, Article
+from scraper_admin.models import Categorie, Article, Contact
 
 
 class ArticleAdmin(admin.ModelAdmin):
@@ -42,3 +42,4 @@ class ArticleAdmin(admin.ModelAdmin):
 
 admin.site.register(Categorie)
 admin.site.register(Article, ArticleAdmin)
+admin.site.register(Contact)

@@ -37,7 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'scraper',
+    'scraper_admin',
     'scraper_engine',
 ]
 
@@ -73,7 +73,6 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = 'scraping.wsgi.application'
-
 
 # Database
 # https://docs.djangoproject.com/en/3.0/ref/settings/#databases

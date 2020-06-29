@@ -24,7 +24,7 @@ def contact(request):
         envoi = True
 
     # Quoiqu'il arrive, on affiche la page du formulaire.
-    return render(request, 'scraper/contact.html', locals())
+    return render(request, 'scraper_admin/contact.html', locals())
 
 
 def nouveau_contact(request):
@@ -38,7 +38,7 @@ def nouveau_contact(request):
         contact.save()
         sauvegarde = True
 
-    return render(request, 'scraper/contact.html', {
+    return render(request, 'scraper_admin/contact.html', {
         'form': form,
         'sauvegarde': sauvegarde
     })
@@ -47,6 +47,6 @@ def nouveau_contact(request):
 def voir_contacts(request):
     return render(
         request,
-        'scraper/image.html',
+        'scraper_admin/image.html',
         {'contacts': Contact.objects.all()}
     )

@@ -1,12 +1,7 @@
-# Define here the models for your scraped items
-#
-# See documentation in:
-# https://docs.scrapy.org/en/latest/topics/items.html
-
-import scrapy
+from scraper_admin.models import Contact
+from scrapy_djangoitem import DjangoItem
 
 
-class ScraperEngineItem(scrapy.Item):
+class ContactItem(DjangoItem):
     # define the fields for your item here like:
-    # name = scrapy.Field()
-    pass
+    django_model = Contact
