@@ -12,7 +12,7 @@ BOT_NAME = 'scraper_engine'
 SPIDER_MODULES = ['scraper_engine.spiders']
 NEWSPIDER_MODULE = 'scraper_engine.spiders'
 
-# PROXY_POOL_ENABLED = True
+#PROXY_POOL_ENABLED = True
 
 # Crawl responsibly by identifying yourself (and your website) on the user-agent
 #USER_AGENT = 'scraper_engine (+http://www.yourdomain.com)'
@@ -95,3 +95,8 @@ ITEM_PIPELINES = {
 #     'scrapy_proxy_pool.middlewares.BanDetectionMiddleware': 620,
 #     # ...
 # }
+
+DOWNLOADER_MIDDLEWARES = {
+    'scrapy.downloadermiddlewares.useragent.UserAgentMiddleware': None,
+    'scrapy_user_agents.middlewares.RandomUserAgentMiddleware': 400,
+}
