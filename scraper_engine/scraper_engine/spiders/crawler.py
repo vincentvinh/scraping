@@ -35,23 +35,12 @@ class ContactSpider(scrapy.Spider):
 class DmozSpider(scrapy.Spider):
     name = "dmoz"
     start_urls = [
-        'https://www.theodo.co.uk/team',
+        'https://www.lazada.vn/catalog/?from=input&q=lipstick',
     ]
 
     def parse(self, response):
-        for sel in response.xpath('//ul/li'):
-            item = ContactItem()
-            if sel.xpath('a/@href').extract()[0]:
-                item["nom"] = sel.xpath('a/@href').extract()[0]
-            else:
-                item["nom"] = 'zerzer'
-            if sel.xpath('a/@href').extract()[0]:
-                item["photo"] = sel.xpath('a/@href').extract()[0]
-            else:
-                item["photo"] = 'zerzer'
-            if sel.xpath('a/@href').extract()[0]:
-                item["adresse"] = sel.xpath('a/@href').extract()[0]
-            else:
-                item["adresse"] = 'zerzer'
-
-            print(item["nom"], item["photo"], item["adresse"])
+        page = response.url.split("/")[-2]
+        filename = 'quotes-%s.html' % page
+        with open(filename, 'wb') as f:
+            f.write(response.body)
+        self.log('Saved file %s' % filename)

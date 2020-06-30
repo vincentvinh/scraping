@@ -50,3 +50,19 @@ def voir_contacts(request):
         'scraper_admin/image.html',
         {'contacts': Contact.objects.all()}
     )
+
+
+def launch_spider(request):
+    return render(
+        request,
+        'scraper_admin/launch_spider.html',
+        {'contacts': Contact.objects.all()}
+    )
+
+
+def chart(request):
+    return render(
+        request,
+        'scraper_admin/chart.html',
+        {'contacts': Contact.objects.all()}
+    )

@@ -12,6 +12,8 @@ BOT_NAME = 'scraper_engine'
 SPIDER_MODULES = ['scraper_engine.spiders']
 NEWSPIDER_MODULE = 'scraper_engine.spiders'
 
+# PROXY_POOL_ENABLED = True
+
 # Crawl responsibly by identifying yourself (and your website) on the user-agent
 #USER_AGENT = 'scraper_engine (+http://www.yourdomain.com)'
 
@@ -53,6 +55,7 @@ ROBOTSTXT_OBEY = True
 #    'scraper_engine.middlewares.ScraperEngineDownloaderMiddleware': 543,
 #}
 
+
 # Enable or disable extensions
 # See https://docs.scrapy.org/en/latest/topics/extensions.html
 #EXTENSIONS = {
@@ -85,3 +88,10 @@ ITEM_PIPELINES = {
 #HTTPCACHE_DIR = 'httpcache'
 #HTTPCACHE_IGNORE_HTTP_CODES = []
 #HTTPCACHE_STORAGE = 'scrapy.extensions.httpcache.FilesystemCacheStorage'
+
+# DOWNLOADER_MIDDLEWARES = {
+#     # ...
+#     'scrapy_proxy_pool.middlewares.ProxyPoolMiddleware': 610,
+#     'scrapy_proxy_pool.middlewares.BanDetectionMiddleware': 620,
+#     # ...
+# }

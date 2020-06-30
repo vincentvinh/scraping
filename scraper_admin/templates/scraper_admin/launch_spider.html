@@ -1,0 +1,82 @@
+<html>
+{% load static  %}
+	<head>
+	    <title>Welcome</title>
+	    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	    <script>
+            {% if messages %}
+                {% for message in messages %}
+                    alert(message);
+                {% endfor %}
+            {% endif %}
+        </script>
+	</head>
+	<style type="text/css">
+
+
+	body{
+		background-color: #f2f2f2;
+	}
+
+
+
+
+table {
+    counter-reset: tableCount;
+}
+.counterCell:before {
+    content: counter(tableCount);
+    counter-increment: tableCount;
+}
+
+#hed{
+	/*position: fixed;*/
+	width: 100%;
+}
+
+	</style>
+	<body>
+
+		  <div class="jumbotron" style="background-color:  #1a75ff;height: 30px;" id="hed">
+		  <center><h1 style="margin-top: -30px;color:white;" class="glyphicon glyphicon-shopping-cart">Scraping Platform</h1></center>
+          </div>
+
+
+
+
+		<div class="container">
+
+		<div class="scrap">
+
+			<!-- <center><h2 style="color: red;">Flipcart Platform</h2></center> -->
+			<form action="{% url 'launch_spider' %}" method="POST">
+	    	{% csrf_token %}
+
+	        <h3>Please insert the valid link Eg:</h3><br>
+	         <input type="text" name="url" style="width: 1000;height: 40" placeholder="Insert the link"><br>
+
+
+
+		<button class="btn btn-success">Submit</button>&ensp;
+
+
+	    	</form>
+
+		</div>
+
+		<table 	width="200" class="table table-bordered table-hover table-striped">
+
+				{% for contact in contacts %}
+    <h2>{{ contact.nom }}</h2>
+    Adresse : {{ contact.adresse|linebreaks }}<br/>
+    <img src="{{ contact.photo.url }}"/>
+{% endfor %}
+
+		</table>
+
+		</div>
+
+	</body>
+</html>
