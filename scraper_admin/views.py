@@ -91,13 +91,13 @@ def launch_spider(request):
             'USER_AGENT': 'Mozilla/5.0 (compatible; Googlebot/2.1; +http://www.google.com/bot.html)'
         }
 
-        task = scrapyd.schedule('default', 'crawler',
+        scrapyd.schedule('default', 'crawler',
                                 settings=settings, url=url, domain=domain)
-        status = 'success'
+        status = 'post success'
         return render(
                 request,
                 'scraper_admin/launch_spider.html',
-                {'contacts': Contact.objects.all(), 'status': status}
+                {'scrapys': ScrapyItem.objects.all(), 'status': status}
             )
     elif request.method == 'GET':
         # We were passed these from past request above. Remember ?
@@ -113,7 +113,7 @@ def launch_spider(request):
             return render(
                 request,
                 'scraper_admin/launch_spider.html',
-                {'contacts': Contact.objects.all(), 'status': status}
+                {'scrapys': ScrapyItem.objects.all()}
             )
 
         # Here we check status of crawling that just started a few seconds ago.
@@ -129,23 +129,31 @@ def launch_spider(request):
                 return render(
                     request,
                     'scraper_admin/launch_spider.html',
-                    {'contacts': Contact.objects.all(), 'status': status, 'data': item.to_dict['data']}
+                    {'scrapys': ScrapyItem.objects.all(), 'status': status, 'data': item.to_dict['data']}
                 )
             except Exception as e:
                 return JsonResponse({'error': str(e)})
         else:
+            status = 'pending'
             return render(
                 request,
                 'scraper_admin/launch_spider.html',
-                {'contacts': Contact.objects.all(), 'status': status}
+                {'scrapys': ScrapyItem.objects.all(), 'status': status}
             )
+    else:
+        return render(
+            request,
+            'scraper_admin/launch_spider.html',
+            {'scrapys': ScrapyItem.objects.all()}
+        )
+
 
 
 def chart(request):
     return render(
         request,
         'scraper_admin/chart.html',
-        {'contacts': Contact.objects.all()}
+        {'Scrapys': ScrapyItem.objects.all()}
     )
 
 

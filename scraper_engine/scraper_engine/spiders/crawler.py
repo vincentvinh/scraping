@@ -1,5 +1,8 @@
 from scrapy.spiders import Rule
 from scrapy.linkextractors import LinkExtractor
+from scrapy.utils.response import open_in_browser
+from scrapy.shell import inspect_response
+
 import scrapy
 
 
@@ -15,23 +18,25 @@ class ContactSpider(scrapy.Spider):
         self.allowed_domains = [self.domain]
 
         ContactSpider.rules = [
-            Rule(LinkExtractor(unique=True), callback='parse_item'),
+            Rule(LinkExtractor(unique=True), callback='parse'),
         ]
         super(ContactSpider, self).__init__(*args, **kwargs)
 
-    def parse_item(self, response):
+    def parse(self, response):
+
+        open_in_browser(response)
+        inspect_response(response)
         # You can tweak each crawled page here
         # Don't forget to return an object.
         i = {}
-        i['url'] = response.url
+        i['url'] = response.css('title::text').extract()
         return i
 
 
 class DmozSpider(scrapy.Spider):
     name = "dmoz"
     start_urls = [
-        'https://www.lazada.vn/catalog/?from=input&q=lipstick',
-        "https://shopee.vn/search?keyword=lipstick&page=0"
+        'https://www.programiz.com/python-programming/if-elif-else'
     ]
 
     def parse(self, response):

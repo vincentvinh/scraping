@@ -6,10 +6,8 @@
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 	<script>
-            {% if status %}
-				alert(status);
-            {% endif %}
-        </script>
+
+	</script>
 </head>
 <style type="text/css">
 
@@ -45,7 +43,12 @@ table {
 
 
 <div class="container">
-
+	{% if status %}
+	<div class="jumbotron" style="background-color:  #1a75ff;height: 30px;" id="hed">
+		<center><h1 style="margin-top: -30px;color:white;" class="glyphicon glyphicon-shopping-cart">
+			{{status}}</h1></center>
+	</div>
+	{% endif %}
 	<div class="scrap">
 		<form action="{% url 'launch_spider' %}" method="POST">
 			{% csrf_token %}
@@ -56,10 +59,11 @@ table {
 	</div>
 	<table 	width="200" class="table table-bordered table-hover table-striped">
 
-		{% for contact in contacts %}
-		<h2>{{ contact.nom }}</h2>
-		Adresse : {{ contact.adresse|linebreaks }}<br/>
-		<img src="{{ contact.adresse }}"/>
+		{% for scrapyitem in scrapys %}
+		<h2>{{ scrapyitem.unique_id }}</h2>
+		Adresse : {{ scrapyitem.data|linebreaks }}<br/>
+		<img src="{{ scrapyitem.data }}"/>
+		{{ scrapyitem.date }}
 		{% endfor %}
 
 	</table>
