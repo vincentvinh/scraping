@@ -1,4 +1,4 @@
-from scrapy.contrib.spiders import Rule
+import Rule as Rule
 from scrapy.linkextractors import LinkExtractor
 import scrapy
 
