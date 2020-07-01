@@ -5,9 +5,8 @@
 
 
 # useful for handling different item types with a single interface
-from itemadapter import ItemAdapter
 import json
-from scraping.scraper_admin.models import ScrapyItem
+from scraper_admin.models import ScrapyItem
 
 
 class ContactPipeline(object):
