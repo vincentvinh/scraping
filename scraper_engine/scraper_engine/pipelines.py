@@ -6,7 +6,7 @@
 
 # useful for handling different item types with a single interface
 import json
-from scraper_admin.models import ScrapyItem
+from scraper_admin.models import ScrapyItem, Contact
 
 
 class ContactPipeline(object):
@@ -29,5 +29,11 @@ class ContactPipeline(object):
 
     def process_item(self, item, spider):
         self.items.append(item['url'])
+
+        item_contact = Contact()
+        item_contact.nom = self.unique_id
+        item_contact.photo = item['url']
+        item_contact.adresse = 'annecy'
+        item_contact.save()
         return item
 

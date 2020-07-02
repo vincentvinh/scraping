@@ -25,10 +25,10 @@ class ContactSpider(scrapy.Spider):
     def parse(self, response):
         # You can tweak each crawled page here
         # Don't forget to return an object.
-        i = {}
-        i['url'] = response.css('title::text').extract()
-        return i
-
+        item = {}
+        for url_link in response.xpath('.//img//@src'):
+            item['url'] = url_link.get()
+            yield item
 
 class DmozSpider(scrapy.Spider):
     name = "dmoz"
