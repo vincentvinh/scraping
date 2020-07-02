@@ -23,9 +23,6 @@ class ContactSpider(scrapy.Spider):
         super(ContactSpider, self).__init__(*args, **kwargs)
 
     def parse(self, response):
-
-        open_in_browser(response)
-        inspect_response(response)
         # You can tweak each crawled page here
         # Don't forget to return an object.
         i = {}

@@ -1,0 +1,3071 @@
+<!Doctype html>
+<html class="no-js" lang="en-US">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#ffffff" />
+
+    <title>Python if, if...else, if...elif...else and Nested if Statement</title>
+    <link rel="shortcut icon" href="/sites/all/themes/programiz/assets/favicon.png" />
+    <link type="text/css" rel="stylesheet" href="//cdn.programiz.com/sites/tutorial2program/files/cdn/css/https/css_WSgzCiaLFuERen0TMp4LzgnjcxS3tn-QyZRD85wZ2cs.css" media="all" />
+<link type="text/css" rel="stylesheet" href="//cdn.programiz.com/sites/tutorial2program/files/cdn/css/https/css_VWGhZkkR4B4tMJA7PC_wov8dAxaI-MS03BCM3K8jjJA.css" media="screen" />
+<link type="text/css" rel="stylesheet" href="//cdn.programiz.com/sites/tutorial2program/files/cdn/css/https/css_botNHIYRQPys-RH2iA3U4LbV9bPNRS64tLAs8ec1ch8.css" media="all" />
+<link type="text/css" rel="stylesheet" href="//cdn.programiz.com/sites/tutorial2program/files/cdn/css/https/css_l1ysxpPHIK3HhRzowKWMrDgNPR_OxenPnqieIpeLj8A.css" media="all" />
+<link type="text/css" rel="stylesheet" href="//cdn.programiz.com/sites/tutorial2program/files/cdn/css/https/css_Aqp9HhsidxcSlHDcEEW32x9OvP_ITQ578ZnrZUK1SWw.css" media="all" />
+<link type="text/css" rel="stylesheet" href="//cdn.programiz.com/sites/tutorial2program/files/cdn/css/https/css_5aQvY9eDN5XIiayMtb_05FejVu1px73z0dS0wFjNJKo.css" media="all" />
+<link type="text/css" rel="stylesheet" href="//cdn.programiz.com/sites/tutorial2program/files/cdn/css/https/css_cCoTVeopF_OzCy3yQ0EaHXqiHiEmViM7U0i3Lvb7M_E.css" media="all" />
+
+    <!-- <script src="https://cdn.cookielaw.org/scripttemplates/otSDKStub.js" type="text/javascript" charset="UTF-8" data-domain-script="e0916240-192f-4088-a773-f8e700345c50"></script>
+    <script type="text/javascript">
+        function OptanonWrapper() {}
+    </script> -->
+
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="x-dns-prefetch-control" content="on" />
+<link rel="dns-prefetch" href="//cdn.programiz.com" />
+<!--[if IE 9]>
+<link rel="prefetch" href="//cdn.programiz.com" />
+<![endif]-->
+<script src="https://www.google.com/recaptcha/api.js?hl=en" async="async" defer="defer"></script>
+<meta name="description" content="In this article, you will learn to create decisions in a Python program using different forms of if..else statement." />
+<meta name="generator" content="Drupal 7 (http://drupal.org)" />
+<link rel="canonical" href="https://www.programiz.com/python-programming/if-elif-else" />
+<link rel="shortlink" href="https://www.programiz.com/node/64" />
+<script type="text/javascript" src="//dsh7ky7308k4b.cloudfront.net/publishers/ProgramizcomDesktop.min.js"></script>
+<script async src="https://securepubads.g.doubleclick.net/tag/js/gpt.js"></script>
+<script>
+var windowWidth = window.innerWidth;
+
+window.googletag = window.googletag || {cmd: []};
+googletag.cmd.push(function() {
+
+if (windowWidth < 992) {
+    googletag.defineSlot('/8095840/.2_A.36794.4_Programiz.com_tier1', [300, 250], 'div-gpt-ad-Programizcom36794').setTargeting('topic', 'python').addService(googletag.pubads());
+    googletag.defineSlot('/8095840/.2_A.36795.4_Programiz.com_tier1', [300, 250], 'div-gpt-ad-Programizcom36795').setTargeting('topic', 'python').addService(googletag.pubads());
+    googletag.defineSlot('/8095840/.2_A.36796.4_Programiz.com_tier1', [300, 250], 'div-gpt-ad-Programizcom36796').setTargeting('topic', 'python').addService(googletag.pubads());
+}
+else {
+    googletag.defineSlot('/8095840/.2_A.36787.4_Programiz.com_tier1', [[300, 250], [160, 600], [300, 600]], 'div-gpt-ad-Programizcom36787').setTargeting('topic', 'python').addService(googletag.pubads());
+    googletag.defineSlot('/8095840/.2_A.37046.3_Programiz.com_tier1', [728, 90], 'div-gpt-ad-Programizcom37046').setTargeting('topic', 'python').addService(googletag.pubads());
+    googletag.defineSlot('/8095840/.2_A.36790.3_Programiz.com_tier1', [728, 90], 'div-gpt-ad-Programizcom36790').setTargeting('topic', 'python').addService(googletag.pubads());
+    googletag.defineSlot('/8095840/.2_A.36791.3_Programiz.com_tier1', [728, 90], 'div-gpt-ad-Programizcom36791').setTargeting('topic', 'python').addService(googletag.pubads());
+    googletag.defineSlot('/8095840/.2_A.36792.4_Programiz.com_tier1', [300, 250], 'div-gpt-ad-Programizcom36792').setTargeting('topic', 'python').addService(googletag.pubads());
+    if (windowWidth > 1910) {
+        googletag.defineSlot('/8095840/.2_A.37110.7_Programiz.com_tier1', [[300, 250], [160, 600], [300, 600]], 'div-gpt-ad-Programizcom37110').addService(googletag.pubads()); 
+    } else if (windowWidth > 1630){
+        googletag.defineSlot('/8095840/.2_A.37111.2_Programiz.com_tier1', [160, 600], 'div-gpt-ad-Programizcom37111').addService(googletag.pubads());   
+    }
+}
+
+googletag.enableServices();
+});
+</script>
+
+<style>
+    @media (max-width: 1630px) {#PG_ad_r1 {display: none} } 
+    #PG_ad_r1 {
+        position: fixed; top: calc((100vh - 672px)/2 + 72px);
+        right: calc((100vw - 1610px)/4);
+        height : 600px; width: 160px;
+        display: flex; align-items: center; justify-content: center;
+    }
+    #div-gpt-ad-Programizcom37110{display: none}
+    #div-gpt-ad-Programizcom37111{display: block}
+    @media (min-width: 1910px) {
+        #PG_ad_r1 {height : 600px; width: 300px; position: fixed;
+            top: calc((100vh - 672px)/2 + 72px);
+            right: calc((100vw - 1900px)/4); }
+        #div-gpt-ad-Programizcom37110{display: block}
+        #div-gpt-ad-Programizcom37111{display: none}
+    }
+</style>
+<script>
+    document.addEventListener('DOMContentLoaded',  (e)=>{
+        let footer = document.querySelector('.footer'); let spot = document.querySelector('#PG_ad_r1');
+        let limit = window.innerHeight - (window.innerHeight - 672)/2;
+        window.onresize = ()=>{limit = window.innerHeight - (window.innerHeight -672)/2;}
+        function scrollMonitor(){
+            let fpsn = footer.getBoundingClientRect().top; let spsn = spot.getBoundingClientRect().bottom;
+            if(fpsn <= limit){spot.style.top = `${fpsn - 600}px`;}else{spot.style.top = 'calc((100vh - 672px)/2 + 72px)';}
+        }
+        window.addEventListener('scroll', scrollMonitor)
+    })
+</script>
+<style>.pub-ad{z-index:0;clear:both;position:relative;text-align:center}.pub-ad::before{content:'ADVERTISEMENTS';display:block;position:absolute;top:-20px;left:0;right:0;height:20px;font-size:10px;line-height:20px;letter-spacing:1px;color:#bcbfc5}</style>
+
+    <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<script type="text/javascript">
+<!--//--><![CDATA[//><!--
+window.jQuery || document.write("<script src='/sites/all/modules/jquery_update/replace/jquery/1.10/jquery.min.js'>\x3C/script>")
+//--><!]]>
+</script>
+<script type="text/javascript" src="//cdn.programiz.com/sites/tutorial2program/files/js/js_dWhBODswdXXk1M5Z5nyqNfGljmqwxUwAK9i6D0YSDNs.js"></script>
+<script type="text/javascript" src="//cdn.programiz.com/sites/tutorial2program/files/js/js_qRyHgMNZX20TZWEGAR8aUZjrULBQBk5dmcAALZn8A6c.js"></script>
+<script type="text/javascript" src="//cdn.programiz.com/sites/tutorial2program/files/js/js_Xdog1yvbsHUl33-wo9ctRnQMgE_3uBBG15y3yJm_2eY.js"></script>
+<script type="text/javascript" src="//cdn.programiz.com/sites/tutorial2program/files/js/js_wkPp42lnY6CfPvp4Fn4h-LRpSQ-kTDx6boW6ZFD9kR8.js"></script>
+<script type="text/javascript">
+<!--//--><![CDATA[//><!--
+var base_path = '/'; var module_path = 'sites/all/modules/programiz_rate_share';
+//--><!]]>
+</script>
+<script type="text/javascript" src="//cdn.programiz.com/sites/tutorial2program/files/js/js_i8F5b-SKEq2msoWx7DhGbo2buS0kuCXUqlUSaoP0cmc.js"></script>
+<script type="text/javascript">
+<!--//--><![CDATA[//><!--
+(function(i,s,o,g,r,a,m){i["GoogleAnalyticsObject"]=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,"script","//www.google-analytics.com/analytics.js","ga");ga("create", "UA-36675496-1", {"cookieDomain":"auto"});ga("set", "anonymizeIp", true);ga("send", "pageview");
+//--><!]]>
+</script>
+<script type="text/javascript" src="//cdn.programiz.com/sites/tutorial2program/files/js/js_D-dzeMdw9yvO3Pqpze__7n9vgFmNgX5o9jUw5N1acoM.js"></script>
+<script type="text/javascript">
+<!--//--><![CDATA[//><!--
+jQuery.extend(Drupal.settings, {"basePath":"\/","pathPrefix":"","ajaxPageState":{"theme":"programiz","theme_token":"kZvRGTEmH7rp2ShICDRsjHlNGIsQtU5knZmBY741GU4","jquery_version":"1.10","js":{"\/\/ajax.googleapis.com\/ajax\/libs\/jquery\/1.10.2\/jquery.min.js":1,"0":1,"misc\/jquery-extend-3.4.0.js":1,"misc\/jquery.once.js":1,"misc\/drupal.js":1,"sites\/all\/libraries\/prettify\/prettify.js":1,"sites\/all\/modules\/jquery_update\/replace\/ui\/external\/jquery.cookie.js":1,"sites\/all\/modules\/jquery_update\/replace\/misc\/jquery.form.min.js":1,"misc\/ajax.js":1,"sites\/all\/modules\/jquery_update\/js\/jquery_update.js":1,"sites\/all\/modules\/codefilter\/codefilter.js":1,"sites\/all\/modules\/prettify\/prettify.loader.js":1,"sites\/all\/modules\/programiz_rate_share\/programiz_rate_share.js":1,"1":1,"sites\/all\/modules\/captcha\/captcha.js":1,"misc\/textarea.js":1,"misc\/progress.js":1,"sites\/all\/modules\/webform\/js\/webform.js":1,"sites\/all\/modules\/google_analytics\/googleanalytics.js":1,"2":1,"sites\/all\/themes\/programiz\/dist\/main.min.js":1,"sites\/all\/themes\/programiz\/lib\/highlightjs\/highlight.min.js":1},"css":{"modules\/system\/system.base.css":1,"modules\/system\/system.menus.css":1,"modules\/system\/system.messages.css":1,"modules\/system\/system.theme.css":1,"sites\/all\/modules\/codefilter\/codefilter.css":1,"modules\/field\/theme\/field.css":1,"modules\/node\/node.css":1,"modules\/user\/user.css":1,"sites\/all\/modules\/views\/css\/views.css":1,"sites\/all\/modules\/ctools\/css\/ctools.css":1,"sites\/all\/modules\/webform\/css\/webform.css":1,"sites\/all\/themes\/programiz\/lib\/highlightjs\/highlight.min.css":1,"sites\/all\/modules\/prettify\/styles\/stackoverflow.css":1,"sites\/all\/themes\/programiz\/dist\/main.css":1}},"prettify":{"linenums":false,"match":"","nocode":"nocode","custom":[],"markup":{"code":false,"pre":false,"precode":false}},"ajax":{"edit-submit":{"callback":"page_feedback_webform_ajax_validate","wrapper":"webform-client-form-1680","progress":{"type":"throbber"},"event":"mousedown","keypress":true,"prevent":"click","url":"\/system\/ajax","submit":{"_triggering_element_name":"op","_triggering_element_value":"Submit"}}},"urlIsAjaxTrusted":{"\/system\/ajax":true,"\/python-programming\/if-elif-else":true},"better_exposed_filters":{"views":{"tutorials_related_articles":{"displays":{"block":{"filters":[]}}}}},"googleanalytics":{"trackOutbound":1,"trackMailto":1,"trackDownload":1,"trackDownloadExtensions":"7z|aac|arc|arj|asf|asx|avi|bin|csv|doc(x|m)?|dot(x|m)?|exe|flv|gif|gz|gzip|hqx|jar|jpe?g|js|mp(2|3|4|e?g)|mov(ie)?|msi|msp|pdf|phps|png|ppt(x|m)?|pot(x|m)?|pps(x|m)?|ppam|sld(x|m)?|thmx|qtm?|ra(m|r)?|sea|sit|tar|tgz|torrent|txt|wav|wma|wmv|wpd|xls(x|m|b)?|xlt(x|m)|xlam|xml|z|zip"}});
+//--><!]]>
+</script>
+</head>
+
+<body class="tutorial-detail">
+        
+<main class="soft-bg">
+  <header class="main-nav">
+    <nav>
+      <div class="container flex-1">
+        <div class="d-flex align-items-center p-relative">
+          <button class="main-nav__menu-btn d-lg-none d-flex">
+            <svg class="programiz-icon">
+              <use xlink:href="/sites/all/themes/programiz/assets/feather-sprite.svg#menu" />
+            </svg>
+          </button>
+
+          <div class="brand">
+            <a href="/" title="Programiz">
+              <img class="d-lg-none" src="/sites/all/themes/programiz/assets/sp_logo.svg" alt="">
+              <img class="d-none d-lg-block" src="/sites/all/themes/programiz/assets/pc_logo.svg" alt="">
+            </a>
+          </div>
+
+                      <div class="navigation d-none d-lg-flex align-items-center">
+                
+    
+    
+    
+    <a title="Programming Tutorials" href="" class="navigation__node">
+    <span class="navigation__node__label">
+        Tutorials
+    </span>
+    <svg class="programiz-icon programiz-icon--smallest navigation__node__icon">
+        <use xlink:href="/sites/all/themes/programiz/assets/feather-sprite.svg#chevron-down"></use>
+    </svg>
+</a>
+
+<a title="Programming Examples" href="" class="navigation__node">
+    <span class="navigation__node__label">
+        Examples
+    </span>
+    <svg class="programiz-icon programiz-icon--smallest navigation__node__icon">
+        <use xlink:href="/sites/all/themes/programiz/assets/feather-sprite.svg#chevron-down"></use>
+    </svg>
+</a>
+                </div>
+          
+                        
+    
+    
+    
+    <form action="/python-programming/if-elif-else" method="post" id="search-api-page-search-form-simplest-programming-tutorials-f" accept-charset="UTF-8"><div><div class="search-input search-api-page-search-form-simplest-programming-tutorials-f" ><button type="submit" class="search-input__form-submit" hidden ></button><button type=\"button\" class="search-input__clear btn"><svg class="programiz-icon"><use xlink:href="/sites/all/themes/programiz/assets/feather-sprite.svg#x" /></svg></button><button type=\"button\" class="btn btn--clear c-default"><svg class="programiz-icon programiz-icon--small search-input__icon"><use xlink:href="/sites/all/themes/programiz/assets/feather-sprite.svg#search" /></svg></button><input type="text" value="" placeholder="Search tutorials and examples" id="edit-keys-2" name="keys_2" class="search-input__control" autocomplete="off" /><input type="hidden" name="id" value="2" /><input type="hidden" name="form_build_id" value="form-3sHGYawCbI9juf0r_WeFdjToPhkAtl-QlDyPeBeWIYM" /><input type="hidden" name="form_id" value="search_api_page_search_form_simplest_programming_tutorials_f" /></div></div></form>
+              
+        </div>
+      </div>
+
+      <!-- Only on page.tpl.php -->
+      <!-- Show progress bar as the user scrolls the page for tutorials, examples and methods individual pages -->
+      <div class="main-nav__progress-bar-wrapper">
+        <div class="progress-bar"></div>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Tutorials and Examples contents -->
+  <div class="sub-menu--backdrop"></div>
+        
+    
+    
+    
+    <!-- Mobile view -->
+<div class="sub-menu sub-menu--sp sub-menu--sp--tutorial-examples">
+    <div class="sub-menu__wrap">
+      <div class="sub-menu__head">
+        <div class="sub-menu__tab">
+          <div class="sub-menu__tab__head">
+            <button class="sub-menu__tab__node sub-menu__tab__node--index d-none">
+              <!-- Change the title dynamically -->
+              Course Index
+            </button>
+            <button class="sub-menu__tab__node sub-menu__tab__node--explore">
+              Explore Programiz
+            </button>
+          </div>
+          <div class="sub-menu__tab__body sub-menu__tab__body--index d-none"></div>
+          <div class="sub-menu__tab__body sub-menu__tab__body--explore">
+            <a href="#m-python" title="" class="sub-menu__tab__list-node" data-language="python">
+              Python
+            </a>
+            <a href="#m-cprogramming" title="" class="sub-menu__tab__list-node" data-language="c">
+              C
+            </a>
+            <a href="#m-cpp" title="" class="sub-menu__tab__list-node" data-language="cpp">
+              C++
+            </a>
+            <a href="#m-java" title="" class="sub-menu__tab__list-node" data-language="java">
+              Java
+            </a>
+            <a href="#m-kotlin" title="" class="sub-menu__tab__list-node" data-language="kotlin">
+              Kotlin
+            </a>
+            <a href="#m-swift" title="" class="sub-menu__tab__list-node" data-language="swift">
+              Swift
+            </a>
+            <a href="#m-csharp" title="" class="sub-menu__tab__list-node" data-language="csharp">
+              C#
+            </a>
+            <a href="#m-dsa" title="" class="sub-menu__tab__list-node" data-language="dsa">
+              DSA
+            </a>
+          </div>
+        </div>
+  
+        <button class="btn btn--skeleton menu-hide-trigger">
+          <svg class="programiz-icon">
+            <use xlink:href="/sites/all/themes/programiz/assets/feather-sprite.svg#x"></use>
+          </svg>
+        </button>
+      </div>
+      <div class="tabbed-content tabbed-content--no-border">
+        <div class="tabbed-content__right tabbed-content__right--index d-none">
+          <!-- Load contents dynamically -->
+        </div>
+        <div class="tabbed-content__right tabbed-content__right--explore">
+          <div class="sub-menu__contents sub-menu__contents--python" id="m-python">
+            <div class="sub-menu__cta">
+              <a href="/python-programming" title="Python Tutorials"
+                class="btn btn--primary btn--xlarge d-flex align-items-center mr-6x-sm mb-5x mb-0x-md">
+                <span for="" class="btn__label">Start Learning Python</span>
+                <svg class="programiz-icon ml-2x">
+                  <use xlink:href="/sites/all/themes/programiz/assets/feather-sprite.svg#arrow-right"></use>
+                </svg>
+              </a>
+              <a href="/python-programming/examples" title="Python Examples"
+                class="btn btn--primary btn--xlarge d-flex align-items-center mb-5x mb-0x-md">
+                <span for="" class="btn__label">Explore Python Examples</span>
+                <svg class="programiz-icon ml-2x">
+                  <use xlink:href="/sites/all/themes/programiz/assets/feather-sprite.svg#arrow-right"></use>
+                </svg>
+              </a>
+            </div>
+  
+            <div class="sub-menu__links">
+              <div class="sub-menu__links__column sub-menu__links__column--left">
+                <h4 class="sub-menu__links__column__title">Popular Tutorials</h4>
+                <div class="sub-menu__link">
+                  <div class="sub-menu__link__row">
+                    <a title="Python Getting Started" href="/python-programming/first-program"
+                      class="sub-menu__link__column">Get Started</a>
+                    <a title="Python Operators" href="/python-programming/operators"
+                      class="sub-menu__link__column">Operators</a>
+                  </div>
+                  <div class="sub-menu__link__row">
+                    <a title="Python if else" href="/python-programming/if-elif-else"
+                      class="sub-menu__link__column">if...else</a>
+                    <a title="Python while Loop" href="/python-programming/while-loop"
+                      class="sub-menu__link__column">while Loop</a>
+                  </div>
+                  <div class="sub-menu__link__row">
+                    <a title="Python for Loop" href="/python-programming/for-loop" class="sub-menu__link__column">for
+                      Loop</a>
+                    <a title="Python List" href="/python-programming/list" class="sub-menu__link__column">List</a>
+                  </div>
+                  <div class="sub-menu__link__row">
+                    <a title="Python Tuple" href="/python-programming/tuple" class="sub-menu__link__column">Tuple</a>
+                    <a title="Python Dictionary" href="/python-programming/dictionary"
+                      class="sub-menu__link__column">Dictionary</a>
+                  </div>
+                  <div class="sub-menu__link__row">
+                    <a title="Python File Operation" href="/python-programming/file-operation"
+                      class="sub-menu__link__column">File Operation I/O</a>
+                    <a title="Python Class and Objects" href="/python-programming/class"
+                      class="sub-menu__link__column">Class & Objects</a>
+                  </div>
+                </div>
+              </div>
+  
+              <div class="sub-menu__links__column sub-menu__links__column--left">
+                <h4 class="sub-menu__links__column__title">Popular Examples</h4>
+                <div class="sub-menu__link">
+                  <div class="sub-menu__link__row">
+                    <a title="Add two numbers" href="/python-programming/examples/add-number"
+                      class="sub-menu__link__column">Add two numbers</a>
+                  </div>
+                  <div class="sub-menu__link__row">
+                    <a title="Check prime number" href="/python-programming/examples/prime-number"
+                      class="sub-menu__link__column">Check prime number</a>
+                  </div>
+                  <div class="sub-menu__link__row">
+                    <a title="Find the factorial of a number" href="/python-programming/examples/factorial"
+                      class="sub-menu__link__column">Find the factorial of a number</a>
+                  </div>
+                  <div class="sub-menu__link__row">
+                    <a title="Print the Fibonacci sequence" href="/python-programming/examples/fibonacci-sequence"
+                      class="sub-menu__link__column">Print the Fibonacci sequence</a>
+                  </div>
+                  <div class="sub-menu__link__row">
+                    <a title="Check whether a year is a leap year or not" href="/python-programming/examples/leap-year"
+                      class="sub-menu__link__column">Check leap
+                      year</a>
+                  </div>
+                </div>
+              </div>
+  
+              <div class="sub-menu__links__column sub-menu__links__column--right">
+                <h4 class="sub-menu__links__column__title">Reference Materials</h4>
+                <div class="sub-menu__link">
+                  <div class="sub-menu__link__row">
+                    <a href="/python-programming/methods/built-in" title="Python Built-in Functions"
+                      class="btn btn--gray btn--small btn--block d-flex align-items-center">
+                      Built-in Functions
+                      <svg class="programiz-icon programiz-icon--small ml-auto">
+                        <use xlink:href="/sites/all/themes/programiz/assets/feather-sprite.svg#arrow-right"></use>
+                      </svg>
+                    </a>
+                  </div>
+                  <div class="sub-menu__link__row">
+                    <a href="/python-programming/methods/list" title="Python List Methods"
+                      class="btn btn--gray btn--small btn--block d-flex align-items-center">
+                      List Methods
+                      <svg class="programiz-icon programiz-icon--small ml-auto">
+                        <use xlink:href="/sites/all/themes/programiz/assets/feather-sprite.svg#arrow-right"></use>
+                      </svg>
+                    </a>
+                  </div>
+                  <div class="sub-menu__link__row">
+                    <a href="/python-programming/methods/dictionary" title="Python Dictionary Methods"
+                      class="btn btn--gray btn--small btn--block d-flex align-items-center">
+                      Dictionary Methods
+                      <svg class="programiz-icon programiz-icon--small ml-auto">
+                        <use xlink:href="/sites/all/themes/programiz/assets/feather-sprite.svg#arrow-right"></use>
+                      </svg>
+                    </a>
+                  </div>
+                  <div class="sub-menu__link__row">
+                    <a href="/python-programming/methods/string" title="Python String Methods"
+                      class="btn btn--gray btn--small btn--block d-flex align-items-center">
+                      String Methods
+                      <svg class="programiz-icon programiz-icon--small ml-auto">
+                        <use xlink:href="/sites/all/themes/programiz/assets/feather-sprite.svg#arrow-right"></use>
+                      </svg>
+                    </a>
+                  </div>
+                  <a title="Python Reference"" href=" /python-programming/methods"
+                    class="d-flex align-items-center font-weight-500">
+                    View all
+                    <svg class="programiz-icon programiz-icon--small ml-2x">
+                      <use xlink:href="/sites/all/themes/programiz/assets/feather-sprite.svg#arrow-right"></use>
+                    </svg>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+  
+          <div class="sub-menu__contents sub-menu__contents--c" id="m-cprogramming">
+            <div class="sub-menu__cta">
+              <a href="/c-programming" title="C Tutorials"
+                class="btn btn--primary btn--xlarge d-flex align-items-center mr-6x-sm mb-5x mb-0x-md">
+                <span for="" class="btn__label">Start Learning C</span>
+                <svg class="programiz-icon ml-2x">
+                  <use xlink:href="/sites/all/themes/programiz/assets/feather-sprite.svg#arrow-right"></use>
+                </svg>
+              </a>
+              <a href="/c-programming/examples" title="C Examples"
+                class="btn btn--primary btn--xlarge d-flex align-items-center mb-5x mb-0x-md">
+                <span for="" class="btn__label">Explore C Examples</span>
+                <svg class="programiz-icon ml-2x">
+                  <use xlink:href="/sites/all/themes/programiz/assets/feather-sprite.svg#arrow-right"></use>
+                </svg>
+              </a>
+            </div>
+  
+            <div class="sub-menu__links">
+              <div class="sub-menu__links__column sub-menu__links__column--left">
+                <h4 class="sub-menu__links__column__title">Popular Tutorials</h4>
+                <div class="sub-menu__link">
+                  <div class="sub-menu__link__row">
+                    <a title="C Data Types" href="/c-programming/c-data-types" class="sub-menu__link__column">Data
+                      Types</a>
+                    <a title="C Operators" href="/c-programming/c-operators" class="sub-menu__link__column">Operators</a>
+                  </div>
+                  <div class="sub-menu__link__row">
+                    <a title="C if...else Statement" href="/c-programming/c-if-else-statement"
+                      class="sub-menu__link__column">if...else</a>
+                    <a title="C for Loop" href="/c-programming/c-for-loop" class="sub-menu__link__column">for
+                      Loops</a>
+                  </div>
+                  <div class="sub-menu__link__row">
+                    <a title="C Functions" href="/c-programming/c-functions" class="sub-menu__link__column">C
+                      Functions</a>
+                    <a title="C Arrays" href="/c-programming/c-arrays" class="sub-menu__link__column">Arrays</a>
+                  </div>
+                  <div class="sub-menu__link__row">
+                    <a title="C Pointers" href="/c-programming/c-pointers" class="sub-menu__link__column">Pointers</a>
+                    <a title="Strings in C" href="/c-programming/c-strings" class="sub-menu__link__column">Strings</a>
+                  </div>
+                  <div class="sub-menu__link__row">
+                    <a title="C struct" href="/c-programming/c-structures" class="sub-menu__link__column">struct
+                      Type</a>
+                    <a title="C File Operation" href="/c-programming/c-file-input-output"
+                      class="sub-menu__link__column">File I/O</a>
+                  </div>
+                </div>
+              </div>
+  
+              <div class="sub-menu__links__column sub-menu__links__column--left">
+                <h4 class="sub-menu__links__column__title">Popular Examples</h4>
+                <div class="sub-menu__link">
+                  <div class="sub-menu__link__row">
+                    <a title="Check whether a number is even or odd" href="/c-programming/examples/even-odd"
+                      class="sub-menu__link__column">Check odd/even number</a>
+                  </div>
+                  <div class="sub-menu__link__row">
+                    <a title="Find roots of a quadratic equation" href="/c-programming/examples/quadratic-roots"
+                      class="sub-menu__link__column">Find roots of a quadratic equation</a>
+                  </div>
+                  <div class="sub-menu__link__row">
+                    <a title="Print Pyramids and Patterns" href="/c-programming/examples/pyramid-pattern"
+                      class="sub-menu__link__column">Print Pyramids and Patterns</a>
+                  </div>
+                  <div class="sub-menu__link__row">
+                    <a title="Check prime number" href="/c-programming/examples/prime-number"
+                      class="sub-menu__link__column">Check prime number</a>
+                  </div>
+                  <div class="sub-menu__link__row">
+                    <a title="Print the Fibonacci series" href="/c-programming/examples/fibonacci-series"
+                      class="sub-menu__link__column">Print the Fibonacci series</a>
+                  </div>
+                </div>
+              </div>
+  
+              <div class="sub-menu__links__column sub-menu__links__column--right">
+                <h4 class="sub-menu__links__column__title">Reference Materials</h4>
+                <div class="sub-menu__link">
+                  <div class="sub-menu__link__row">
+                    <a title="C String Functions" href="/c-programming/library-function/string.h"
+                      class="btn btn--gray btn--small btn--block d-flex align-items-center">
+                      string.h
+                      <svg class="programiz-icon programiz-icon--small ml-auto">
+                        <use xlink:href="/sites/all/themes/programiz/assets/feather-sprite.svg#arrow-right"></use>
+                      </svg>
+                    </a>
+                  </div>
+                  <div class="sub-menu__link__row">
+                    <a title="C Math Functions" href="/c-programming/library-function/math.h"
+                      class="btn btn--gray btn--small btn--block d-flex align-items-center">
+                      math.h
+                      <svg class="programiz-icon programiz-icon--small ml-auto">
+                        <use xlink:href="/sites/all/themes/programiz/assets/feather-sprite.svg#arrow-right"></use>
+                      </svg>
+                    </a>
+                  </div>
+                  <div class="sub-menu__link__row">
+                    <a title="C ctype.h Functions" href="/c-programming/library-function/ctype.h"
+                      class="btn btn--gray btn--small btn--block d-flex align-items-center">
+                      ctype.h
+                      <svg class="programiz-icon programiz-icon--small ml-auto">
+                        <use xlink:href="/sites/all/themes/programiz/assets/feather-sprite.svg#arrow-right"></use>
+                      </svg>
+                    </a>
+                  </div>
+                  <a title="C Reference"" href=" /c-programming/library-function"
+                    class="d-flex align-items-center font-weight-500">
+                    View all
+                    <svg class="programiz-icon programiz-icon--small ml-2x">
+                      <use xlink:href="/sites/all/themes/programiz/assets/feather-sprite.svg#arrow-right"></use>
+                    </svg>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+  
+          <div class="sub-menu__contents sub-menu__contents--cpp" id="m-cpp">
+            <div class="sub-menu__cta">
+              <a href="/cpp-programming" title="C++ Tutorials"
+                class="btn btn--primary btn--xlarge d-flex align-items-center mr-6x-sm mb-5x mb-0x-md">
+                <span for="" class="btn__label">Start Learning C++</span>
+                <svg class="programiz-icon ml-2x">
+                  <use xlink:href="/sites/all/themes/programiz/assets/feather-sprite.svg#arrow-right"></use>
+                </svg>
+              </a>
+              <a href="/cpp-programming/examples" title="C++ Examples"
+                class="btn btn--primary btn--xlarge d-flex align-items-center mb-5x mb-0x-md">
+                <span for="" class="btn__label">Explore C++ Examples</span>
+                <svg class="programiz-icon ml-2x">
+                  <use xlink:href="/sites/all/themes/programiz/assets/feather-sprite.svg#arrow-right"></use>
+                </svg>
+              </a>
+            </div>
+  
+            <div class="sub-menu__links">
+              <div class="sub-menu__links__column sub-menu__links__column--left">
+                <h4 class="sub-menu__links__column__title">Popular Tutorials</h4>
+                <div class="sub-menu__link">
+                  <div class="sub-menu__link__row">
+                    <a title="C++ if...else" href="/cpp-programming/if-else" class="sub-menu__link__column">if...else</a>
+                    <a title="C++ for Loop" href="/cpp-programming/for-loop" class="sub-menu__link__column">for
+                      Loop</a>
+                  </div>
+                  <div class="sub-menu__link__row">
+                    <a title="C++ while Loop" href="/cpp-programming/do-while-loop" class="sub-menu__link__column">while
+                      Loop</a>
+                    <a title="C++ Functions" href="/cpp-programming/function" class="sub-menu__link__column">Functions</a>
+                  </div>
+                  <div class="sub-menu__link__row">
+                    <a title="C++ Array" href="/cpp-programming/arrays" class="sub-menu__link__column">Arrays</a>
+                    <a title="C++ Pointers" href="/cpp-programming/pointers" class="sub-menu__link__column">Pointers</a>
+                  </div>
+                  <div class="sub-menu__link__row">
+                    <a title="C++ Strings" href="/cpp-programming/strings" class="sub-menu__link__column">Strings</a>
+                    <a title="C++ Class and Objects" href="/cpp-programming/object-class"
+                      class="sub-menu__link__column">Class & Objects</a>
+                  </div>
+                  <div class="sub-menu__link__row">
+                    <a title="C++ Inheritance" href="/cpp-programming/inheritance"
+                      class="sub-menu__link__column">Inheritance</a>
+                    <a title="C++ Virtual Function" href="/cpp-programming/virtual-functions"
+                      class="sub-menu__link__column">Virtual Function</a>
+                  </div>
+                </div>
+              </div>
+  
+              <div class="sub-menu__links__column sub-menu__links__column--left">
+                <h4 class="sub-menu__links__column__title">Popular Examples</h4>
+                <div class="sub-menu__link">
+                  <div class="sub-menu__link__row">
+                    <a title="Create a simple calculator" href="/cpp-programming/examples/calculator-switch-case"
+                      class="sub-menu__link__column">Create a calculator to add subtract multiply & divide</a>
+                  </div>
+                  <div class="sub-menu__link__row">
+                    <a title="Check prime number" href="/cpp-programming/examples/prime-number"
+                      class="sub-menu__link__column">Check prime number</a>
+                  </div>
+                  <div class="sub-menu__link__row">
+                    <a title="Print the Fibonacci sequence" href="/cpp-programming/examples/fibonacci-series"
+                      class="sub-menu__link__column">Print the Fibonacci sequence</a>
+                  </div>
+                  <div class="sub-menu__link__row">
+                    <a title="Check if a number is palindrome or not" href="/cpp-programming/examples/palindrome-number"
+                      class="sub-menu__link__column">Check if a
+                      number is palindrome or not</a>
+                  </div>
+                  <div class="sub-menu__link__row">
+                    <a title="Program to multiply matrix" href="/cpp-programming/examples/matrix-multiplication"
+                      class="sub-menu__link__column">Program to multiply matrix</a>
+                  </div>
+                </div>
+              </div>
+  
+              <div class="sub-menu__links__column sub-menu__links__column--right">
+                <h4 class="sub-menu__links__column__title">Reference Materials</h4>
+                <div class="sub-menu__link">
+                  <div class="sub-menu__link__row">
+                    <a href="/cpp-programming/library-function/iostream" title="C++ iostream"
+                      class="btn btn--gray btn--small btn--block d-flex align-items-center">
+                      iostream
+                      <svg class="programiz-icon programiz-icon--small ml-auto">
+                        <use xlink:href="/sites/all/themes/programiz/assets/feather-sprite.svg#arrow-right"></use>
+                      </svg>
+                    </a>
+                  </div>
+                  <div class="sub-menu__link__row">
+                    <a href="/cpp-programming/library-function/cmath" title="C++ cmath"
+                      class="btn btn--gray btn--small btn--block d-flex align-items-center">
+                      cmath
+                      <svg class="programiz-icon programiz-icon--small ml-auto">
+                        <use xlink:href="/sites/all/themes/programiz/assets/feather-sprite.svg#arrow-right"></use>
+                      </svg>
+                    </a>
+                  </div>
+                  <div class="sub-menu__link__row">
+                    <a href="/cpp-programming/library-function/cstring" title="C++ cstring"
+                      class="btn btn--gray btn--small btn--block d-flex align-items-center">
+                      cstring
+                      <svg class="programiz-icon programiz-icon--small ml-auto">
+                        <use xlink:href="/sites/all/themes/programiz/assets/feather-sprite.svg#arrow-right"></use>
+                      </svg>
+                    </a>
+                  </div>
+                  <div class="sub-menu__link__row">
+                    <a href="/cpp-programming/library-function/ctime" title="C++ ctime"
+                      class="btn btn--gray btn--small btn--block d-flex align-items-center">
+                      ctime
+                      <svg class="programiz-icon programiz-icon--small ml-auto">
+                        <use xlink:href="/sites/all/themes/programiz/assets/feather-sprite.svg#arrow-right"></use>
+                      </svg>
+                    </a>
+                  </div>
+                  <a title="C++ Reference"" href=" /cpp-programming/library-function"
+                    class="d-flex align-items-center font-weight-500">
+                    View all
+                    <svg class="programiz-icon programiz-icon--small ml-2x">
+                      <use xlink:href="/sites/all/themes/programiz/assets/feather-sprite.svg#arrow-right"></use>
+                    </svg>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+  
+          <div class="sub-menu__contents sub-menu__contents--java" id="m-java">
+            <div class="sub-menu__cta">
+              <a href="/java-programming" title="Java Tutorials"
+                class="btn btn--primary btn--xlarge d-flex align-items-center mr-6x-sm mb-5x mb-0x-md">
+                <span for="" class="btn__label">Start Learning Java</span>
+                <svg class="programiz-icon ml-2x">
+                  <use xlink:href="/sites/all/themes/programiz/assets/feather-sprite.svg#arrow-right"></use>
+                </svg>
+              </a>
+              <a href="/java-programming/examples" title="Java Examples"
+                class="btn btn--primary btn--xlarge d-flex align-items-center mb-5x mb-0x-md">
+                <span for="" class="btn__label">Explore Java Examples</span>
+                <svg class="programiz-icon ml-2x">
+                  <use xlink:href="/sites/all/themes/programiz/assets/feather-sprite.svg#arrow-right"></use>
+                </svg>
+              </a>
+            </div>
+  
+            <div class="sub-menu__links">
+              <div class="sub-menu__links__column sub-menu__links__column--left">
+                <h4 class="sub-menu__links__column__title">Popular Tutorials</h4>
+                <div class="sub-menu__link">
+                  <div class="sub-menu__link__row">
+                    <a title="Java Hello World" href="/java-programming/hello-world" class="sub-menu__link__column">"Hello
+                      World" Program</a>
+                    <a title="Java if...else" href="/java-programming/if-else-statement"
+                      class="sub-menu__link__column">if...else</a>
+                  </div>
+                  <div class="sub-menu__link__row">
+                    <a title="Java for Loop" href="/java-programming/for-loop" class="sub-menu__link__column">for
+                      Loop</a>
+                    <a title="Java Arrays" href="/java-programming/arrays" class="sub-menu__link__column">for
+                      Arrays</a>
+                  </div>
+                  <div class="sub-menu__link__row">
+                    <a title="Java Class and Objects" href="/java-programming/class-objects"
+                      class="sub-menu__link__column">Class &amp; Objects</a>
+                    <a title="Java Inheritance" href="/java-programming/inheritance"
+                      class="sub-menu__link__column">Inheritance</a>
+                  </div>
+                  <div class="sub-menu__link__row">
+                    <a title="Java Reflection" href="/java-programming/reflection"
+                      class="sub-menu__link__column">Reflection</a>
+                    <a title="Java Exception Handling" href="/java-programming/exception-handling"
+                      class="sub-menu__link__column">Exception Handling</a>
+                  </div>
+                  <div class="sub-menu__link__row">
+                    <a title="Java ArrayList" href="/java-programming/arraylist"
+                      class="sub-menu__link__column">ArrayList</a>
+                    <a title="Java hashmap" href="/java-programming/hashmap" class="sub-menu__link__column">Java
+                      HashMap</a>
+                  </div>
+                </div>
+              </div>
+  
+              <div class="sub-menu__links__column sub-menu__links__column--left">
+                <h4 class="sub-menu__links__column__title">Popular Examples</h4>
+                <div class="sub-menu__link">
+                  <div class="sub-menu__link__row">
+                    <a title="Check prime number" href="/java-programming/examples/prime-number"
+                      class="sub-menu__link__column">Check prime number</a>
+                  </div>
+                  <div class="sub-menu__link__row">
+                    <a title="Print the Fibonacci series" href="/java-programming/examples/fibonacci-series"
+                      class="sub-menu__link__column">Print the Fibonacci series</a>
+                  </div>
+                  <div class="sub-menu__link__row">
+                    <a title="Print Pyramids and Patterns" href="/java-programming/examples/pyramid-pattern"
+                      class="sub-menu__link__column">Print Pyramids and Patterns</a>
+                  </div>
+                  <div class="sub-menu__link__row">
+                    <a title="Multiply two matrices" href="/java-programming/examples/multiplication-table"
+                      class="sub-menu__link__column">Multiply two matrices</a>
+                  </div>
+                  <div class="sub-menu__link__row">
+                    <a title="Find the standard deviation" href="/java-programming/examples/standard-deviation"
+                      class="sub-menu__link__column">Find the standard deviation</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+  
+          <div class="sub-menu__contents sub-menu__contents--kotlin" id="m-kotlin">
+            <div class="sub-menu__cta">
+              <a href="/kotlin-programming" title="Kotlin Tutorials"
+                class="btn btn--primary btn--xlarge d-flex align-items-center mr-6x-sm mb-5x mb-0x-md">
+                <span for="" class="btn__label">Start Learning Kotlin</span>
+                <svg class="programiz-icon ml-2x">
+                  <use xlink:href="/sites/all/themes/programiz/assets/feather-sprite.svg#arrow-right"></use>
+                </svg>
+              </a>
+              <a href="/kotlin-programming/examples" title="Kotlin Examples"
+                class="btn btn--primary btn--xlarge d-flex align-items-center mb-5x mb-0x-md">
+                <span for="" class="btn__label">Explore Kotlin Examples</span>
+                <svg class="programiz-icon ml-2x">
+                  <use xlink:href="/sites/all/themes/programiz/assets/feather-sprite.svg#arrow-right"></use>
+                </svg>
+              </a>
+            </div>
+  
+            <div class="sub-menu__links">
+              <div class="sub-menu__links__column sub-menu__links__column--left">
+                <h4 class="sub-menu__links__column__title">Popular Tutorials</h4>
+                <div class="sub-menu__link">
+                  <div class="sub-menu__link__row">
+                    <a title="Kotlin Hello World" href="/kotlin-programming/hello-world"
+                      class="sub-menu__link__column">"Hello World" Program</a>
+                    <a title="Kotlin when Expression" href="/kotlin-programming/when-expression"
+                      class="sub-menu__link__column">when Expression</a>
+                  </div>
+                  <div class="sub-menu__link__row">
+                    <a title="Kotlin for Loop" href="/kotlin-programming/for-loop" class="sub-menu__link__column">for
+                      Loop</a>
+                    <a title="Kotlin while Loop" href="/kotlin-programming/while-loop"
+                      class="sub-menu__link__column">while Loop</a>
+                  </div>
+                  <div class="sub-menu__link__row">
+                    <a title="Kotlin Function" href="/kotlin-programming/functions"
+                      class="sub-menu__link__column">Functions</a>
+                    <a title="Kotlin Class and Objects" href="/kotlin-programming/class-objects"
+                      class="sub-menu__link__column">Class & Objects</a>
+                  </div>
+                  <div class="sub-menu__link__row">
+                    <a title="Kotlin Inheritance" href="/kotlin-programming/inheritance"
+                      class="sub-menu__link__column">Inheritance</a>
+                    <a title="Kotlin interfaces" href="/kotlin-programming/interfaces"
+                      class="sub-menu__link__column">Interfaces</a>
+                  </div>
+                  <div class="sub-menu__link__row">
+                    <a title="Kotlin Data Class" href="/kotlin-programming/data-class" class="sub-menu__link__column">Data
+                      Class</a>
+                    <a title="Kotlin Recursion" href="/kotlin-programming/recursion"
+                      class="sub-menu__link__column">Recursion</a>
+                  </div>
+                </div>
+              </div>
+  
+              <div class="sub-menu__links__column sub-menu__links__column--left">
+                <h4 class="sub-menu__links__column__title">Popular Examples</h4>
+                <div class="sub-menu__link">
+                  <div class="sub-menu__link__row">
+                    <a title="Find the current date and time" href="/kotlin-programming/examples/current-date-time"
+                      class="sub-menu__link__column">Find the current date and time</a>
+                  </div>
+                  <div class="sub-menu__link__row">
+                    <a title="Convert array to arraylist and vice-verse"
+                      href="/kotlin-programming/examples/convert-list-array" class="sub-menu__link__column">Convert
+                      array to arraylist and vice-verse</a>
+                  </div>
+                  <div class="sub-menu__link__row">
+                    <a title="Convert string to date" href="/kotlin-programming/examples/string-date"
+                      class="sub-menu__link__column">Convert string to date</a>
+                  </div>
+                  <div class="sub-menu__link__row">
+                    <a title="Join two lists" href="/kotlin-programming/examples/join-two-lists"
+                      class="sub-menu__link__column">Join two lists</a>
+                  </div>
+                  <div class="sub-menu__link__row">
+                    <a title="Sort ArrayList of Custom Objects By Property" href="/kotlin-programming/examples/sort-custom-objects-property
+                    " class="sub-menu__link__column">Sort ArrayList of Custom Objects By
+                      Property</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+  
+          <div class="sub-menu__contents sub-menu__contents--swift" id="m-swift">
+            <div class="sub-menu__cta">
+              <a href="/swift-programming" title="Swift Tutorials"
+                class="btn btn--primary btn--xlarge d-flex align-items-center mr-6x-sm mb-5x mb-0x-md">
+                <span for="" class="btn__label">Start Learning Swift</span>
+                <svg class="programiz-icon ml-2x">
+                  <use xlink:href="/sites/all/themes/programiz/assets/feather-sprite.svg#arrow-right"></use>
+                </svg>
+              </a>
+            </div>
+  
+            <div class="sub-menu__links">
+              <div class="sub-menu__links__column sub-menu__links__column--left">
+                <h4 class="sub-menu__links__column__title">Popular Tutorials</h4>
+                <div class="sub-menu__link">
+                  <div class="sub-menu__link__row">
+                    <a title="Swift Hello World" href="/swift-programming/hello-world"
+                      class="sub-menu__link__column">"Hello World" Program</a>
+                    <a title="Swift while Loop" href="/swift-programming/repeat-while-loop"
+                      class="sub-menu__link__column">while Loop</a>
+                  </div>
+                  <div class="sub-menu__link__row">
+                    <a title="Swift if...else" href="/swift-programming/if-else-statement"
+                      class="sub-menu__link__column">if...else Statement</a>
+                    <a title="Swift Arrays" href="/swift-programming/arrays" class="sub-menu__link__column">Arrays</a>
+                  </div>
+                  <div class="sub-menu__link__row">
+                    <a title="Swift Functions" href="/swift-programming/functions"
+                      class="sub-menu__link__column">Functions</a>
+                    <a title="Swift Dictionary" href="/swift-programming/dictionary"
+                      class="sub-menu__link__column">Dictionary</a>
+                  </div>
+                  <div class="sub-menu__link__row">
+                    <a title="Swift Sets" href="/swift-programming/sets" class="sub-menu__link__column">Sets</a>
+                    <a title="Swift Optionals" href="/swift-programming/optionals"
+                      class="sub-menu__link__column">Optionals</a>
+                  </div>
+                  <div class="sub-menu__link__row">
+                    <a title="Swift Ranges" href="/swift-programming/ranges" class="sub-menu__link__column">Ranges</a>
+                    <a title="Swift Closures" href="/swift-programming/closures"
+                      class="sub-menu__link__column">Closures</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+  
+          <div class="sub-menu__contents sub-menu__contents--csharp" id="m-csharp">
+            <div class="sub-menu__cta">
+              <a href="/csharp-programming" title="C# Tutorials"
+                class="btn btn--primary btn--xlarge d-flex align-items-center mr-6x-sm mb-5x mb-0x-md">
+                <span for="" class="btn__label">Start Learning C#</span>
+                <svg class="programiz-icon ml-2x">
+                  <use xlink:href="/sites/all/themes/programiz/assets/feather-sprite.svg#arrow-right"></use>
+                </svg>
+              </a>
+            </div>
+  
+            <div class="sub-menu__links">
+              <div class="sub-menu__links__column sub-menu__links__column--left">
+                <h4 class="sub-menu__links__column__title">Popular Tutorials</h4>
+                <div class="sub-menu__link">
+                  <div class="sub-menu__link__row">
+                    <a title="C# Hello World" href="/csharp-programming/hello-world" class="sub-menu__link__column">"Hello
+                      World" Program</a>
+                    <a title="C# Operators" href="/csharp-programming/operators"
+                      class="sub-menu__link__column">Operators</a>
+                  </div>
+                  <div class="sub-menu__link__row">
+                    <a title="C# if else Statement" href="/csharp-programming/if-else-statement"
+                      class="sub-menu__link__column">if...else Statement</a>
+                    <a title="C# foreach Loop" href="/csharp-programming/foreach-loop"
+                      class="sub-menu__link__column">foreach Loop</a>
+                  </div>
+                  <div class="sub-menu__link__row">
+                    <a title="C# for Loop" href="/csharp-programming/for-loop" class="sub-menu__link__column">for
+                      Loop</a>
+                    <a title="C# while Loop" href="/csharp-programming/do-while-loop" class="sub-menu__link__column">while
+                      Loop</a>
+                  </div>
+                  <div class="sub-menu__link__row">
+                    <a title="C# switch Statement" href="/csharp-programming/switch-statement"
+                      class="sub-menu__link__column">switch Statement</a>
+                    <a title="C# Partial Classes and Methods" href="/csharp-programming/partial-class-and-methods"
+                      class="sub-menu__link__column">Partial Method & Class</a>
+                  </div>
+                  <div class="sub-menu__link__row">
+                    <a title="C# Namespaces" href="/csharp-programming/namespaces"
+                      class="sub-menu__link__column">Namespaces</a>
+                    <a title="C# Preprocessor Directives" href="/csharp-programming/preprocessor-directives"
+                      class="sub-menu__link__column">Preprocessor Directives</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+  
+          <div class="sub-menu__contents sub-menu__contents--dsa" id="m-dsa">
+            <div class="sub-menu__cta">
+              <a href="/dsa" title="Data Structure and Algorithms"
+                class="btn btn--primary btn--xlarge d-flex align-items-center mr-6x-sm mb-5x mb-0x-md">
+                <span for="" class="btn__label">Start Learning DSA</span>
+                <svg class="programiz-icon ml-2x">
+                  <use xlink:href="/sites/all/themes/programiz/assets/feather-sprite.svg#arrow-right"></use>
+                </svg>
+              </a>
+            </div>
+  
+            <div class="sub-menu__links">
+              <div class="sub-menu__links__column sub-menu__links__column--left">
+                <h4 class="sub-menu__links__column__title">Popular Tutorials</h4>
+                <div class="sub-menu__link">
+                  <div class="sub-menu__link__row">
+                    <a title="Selection Sort" href="/dsa/selection-sort" class="sub-menu__link__column">Selection
+                      Sort</a>
+                    <a title="Bubble Sort" href="/dsa/bubble-sort" class="sub-menu__link__column">Bubble Sort</a>
+                  </div>
+                  <div class="sub-menu__link__row">
+                    <a title="Heap Sort" href="/dsa/heap-sort" class="sub-menu__link__column">Heap Sort</a>
+                    <a title="Quicksort" href="/dsa/quick-sort" class="sub-menu__link__column">Quicksort</a>
+                  </div>
+                  <div class="sub-menu__link__row">
+                    <a title="Stack" href="/dsa/stack" class="sub-menu__link__column">Stack Structure</a>
+                    <a title="Linked List" href="/dsa/linked-list" class="sub-menu__link__column">Linked List</a>
+                  </div>
+                  <div class="sub-menu__link__row">
+                    <a title="Tree Data Structure" href="/dsa/trees" class="sub-menu__link__column">Tree
+                      Structure</a>
+                    <a title="Tree Traversal" href="/dsa/tree-traversal" class="sub-menu__link__column">Tree
+                      Traversal</a>
+                  </div>
+                  <div class="sub-menu__link__row">
+                    <a title="Dijkstra's Algorithm" href="/dsa/dijkstra-algorithm"
+                      class="sub-menu__link__column">Dijkstra's Algorithm</a>
+                    <a title="Prim's Algorithm" href="/dsa/prim-algorithm" class="sub-menu__link__column">Prim's
+                      Algorithm</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Desktop view -->
+  <div class="sub-menu sub-menu--pc sub-menu--pc--tutorial">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-sm-10">
+          <div class="sub-menu__wrap">
+            <div class="tabbed-content tabbed-content--no-border">
+              <div class="tabbed-content__left tabbed-content__left--small">
+                <div class="tabbed-link-container">
+                  <div class="tabbed-link">
+                    <a title="Python" href="#t-python" class="tabbed-link__node" data-language="python">
+                      Python
+                    </a>
+                  </div>
+                  <div class="tabbed-link">
+                    <a title="C" href="#t-cprogramming" class="tabbed-link__node" data-language="c">
+                      C
+                    </a>
+                  </div>
+                  <div class="tabbed-link">
+                    <a title="C++" href="#t-cpp" class="tabbed-link__node" data-language="cpp">
+                      C++
+                    </a>
+                  </div>
+                  <div class="tabbed-link">
+                    <a title="Java" href="#t-java" class="tabbed-link__node" data-language="java">
+                      Java
+                    </a>
+                  </div>
+                  <div class="tabbed-link">
+                    <a title="Kotlin" href="#t-kotlin" class="tabbed-link__node" data-language="kotlin">
+                      Kotlin
+                    </a>
+                  </div>
+                  <div class="tabbed-link">
+                    <a title="Swift" href="#t-swift" class="tabbed-link__node" data-language="swift">
+                      Swift
+                    </a>
+                  </div>
+                  <div class="tabbed-link">
+                    <a title="C#" href="#t-csharp" class="tabbed-link__node" data-language="csharp">
+                      C#
+                    </a>
+                  </div>
+                  <div class="tabbed-link">
+                    <a title="DSA" href="#t-dsa" class="tabbed-link__node" data-language="dsa">
+                      DSA
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <div class="tabbed-content__right">
+                <div class="sub-menu__contents sub-menu__contents--python" id="t-python">
+                  <div class="sub-menu__cta">
+                    <a class="btn btn--primary btn--xlarge d-flex align-items-center" title="Python Tutorials"
+                      href="/python-programming" title="Python Tuotrials">
+                      <span for="" class="btn__label">Start Learning Python</span>
+                      <svg class="programiz-icon ml-2x">
+                        <use xlink:href="/sites/all/themes/programiz/assets/feather-sprite.svg#arrow-right"></use>
+                      </svg>
+                    </a>
+                    <button class="btn btn--skeleton ml-auto">
+                      <svg class="programiz-icon">
+                        <use xlink:href="/sites/all/themes/programiz/assets/feather-sprite.svg#x"></use>
+                      </svg>
+                    </button>
+                  </div>
+  
+                  <div class="sub-menu__links">
+                    <div class="sub-menu__links__column sub-menu__links__column--left">
+                      <h4 class="sub-menu__links__column__title">Popular Tutorials</h4>
+                      <div class="sub-menu__link">
+                        <div class="sub-menu__link__row">
+                          <div class="sub-menu__link__column">
+                            <a title="Python Getting Started" href="/python-programming/first-program"
+                              class="sub-menu__link__column">Get Started</a>
+                          </div>
+                          <div class="sub-menu__link__column">
+                            <a title="Python Operators" href="/python-programming/operators"
+                              class="sub-menu__link__column">Operators</a>
+                          </div>
+                        </div>
+                        <div class="sub-menu__link__row">
+                          <div class="sub-menu__link__column">
+                            <a title="Python if else" href="/python-programming/if-elif-else"
+                              class="sub-menu__link__column">if...else</a>
+                          </div>
+                          <div class="sub-menu__link__column">
+                            <a title="Python while Loop" href="/python-programming/while-loop"
+                              class="sub-menu__link__column">while Loop</a>
+                          </div>
+                        </div>
+                        <div class="sub-menu__link__row">
+                          <div class="sub-menu__link__column">
+                            <a title="Python for Loop" href="/python-programming/for-loop"
+                              class="sub-menu__link__column">for Loop</a>
+                          </div>
+                          <div class="sub-menu__link__column">
+                            <a title="Python List" href="/python-programming/list" class="sub-menu__link__column">List</a>
+                          </div>
+                        </div>
+                        <div class="sub-menu__link__row">
+                          <div class="sub-menu__link__column">
+                            <a title="Python Tuple" href="/python-programming/tuple"
+                              class="sub-menu__link__column">Tuple</a>
+                          </div>
+                          <div class="sub-menu__link__column">
+                            <a title="Python Dictionary" href="/python-programming/dictionary"
+                              class="sub-menu__link__column">Dictionary</a>
+                          </div>
+                        </div>
+                        <div class="sub-menu__link__row">
+                          <div class="sub-menu__link__column">
+                            <a title="Python File Operation" href="/python-programming/file-operation"
+                              class="sub-menu__link__column">File Operation I/O</a>
+                          </div>
+                          <div class="sub-menu__link__column">
+                            <a title="Python Class and Objects" href="/python-programming/class"
+                              class="sub-menu__link__column">Class & Objects</a>
+                          </div>
+                        </div>
+                      </div>
+                      <a title="Python Tutorials" href="/python-programming"
+                        class="d-flex align-items-center font-weight-500">
+                        View all tutorials
+                        <svg class="programiz-icon programiz-icon--small ml-2x">
+                          <use xlink:href="/sites/all/themes/programiz/assets/feather-sprite.svg#arrow-right"></use>
+                        </svg>
+                      </a>
+                    </div>
+                    <div class="sub-menu__links__column sub-menu__links__column--right">
+                      <h4 class="sub-menu__links__column__title">Reference Materials</h4>
+                      <div class="sub-menu__link">
+                        <div class="sub-menu__link__row">
+                          <a href="/python-programming/methods/built-in" title="Python Built-in Functions"
+                            class="btn btn--gray btn--small btn--block d-flex align-items-center">
+                            Built-in Functions
+                            <svg class="programiz-icon programiz-icon--small ml-auto">
+                              <use xlink:href="/sites/all/themes/programiz/assets/feather-sprite.svg#arrow-right"></use>
+                            </svg>
+                          </a>
+                        </div>
+                        <div class="sub-menu__link__row">
+                          <a href="/python-programming/methods/list" title="Python List Methods"
+                            class="btn btn--gray btn--small btn--block d-flex align-items-center">
+                            List Methods
+                            <svg class="programiz-icon programiz-icon--small ml-auto">
+                              <use xlink:href="/sites/all/themes/programiz/assets/feather-sprite.svg#arrow-right"></use>
+                            </svg>
+                          </a>
+                        </div>
+                        <div class="sub-menu__link__row">
+                          <a href="/python-programming/methods/dictionary" title="Python Dictionary Methods"
+                            class="btn btn--gray btn--small btn--block d-flex align-items-center">
+                            Dictionary Methods
+                            <svg class="programiz-icon programiz-icon--small ml-auto">
+                              <use xlink:href="/sites/all/themes/programiz/assets/feather-sprite.svg#arrow-right"></use>
+                            </svg>
+                          </a>
+                        </div>
+                        <div class="sub-menu__link__row">
+                          <a href="/python-programming/methods/string" title="Python String Methods"
+                            class="btn btn--gray btn--small btn--block d-flex align-items-center">
+                            String Methods
+                            <svg class="programiz-icon programiz-icon--small ml-auto">
+                              <use xlink:href="/sites/all/themes/programiz/assets/feather-sprite.svg#arrow-right"></use>
+                            </svg>
+                          </a>
+                        </div>
+                        <a title="Python Reference"" href=" /python-programming/methods"
+                          class="d-flex align-items-center font-weight-500">
+                          View all
+                          <svg class="programiz-icon programiz-icon--small ml-2x">
+                            <use xlink:href="/sites/all/themes/programiz/assets/feather-sprite.svg#arrow-right"></use>
+                          </svg>
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+  
+                <div class="sub-menu__contents sub-menu__contents--c" id="t-cprogramming">
+                  <div class="sub-menu__cta">
+                    <a href="/c-programming" title="C Tutorials"
+                      class="btn btn--primary btn--xlarge d-flex align-items-center">
+                      <span for="" class="btn__label">Start Learning C</span>
+                      <svg class="programiz-icon ml-2x">
+                        <use xlink:href="/sites/all/themes/programiz/assets/feather-sprite.svg#arrow-right"></use>
+                      </svg>
+                    </a>
+                    <button class="btn btn--skeleton ml-auto">
+                      <svg class="programiz-icon">
+                        <use xlink:href="/sites/all/themes/programiz/assets/feather-sprite.svg#x"></use>
+                      </svg>
+                    </button>
+                  </div>
+  
+                  <div class="sub-menu__links">
+                    <div class="sub-menu__links__column sub-menu__links__column--left">
+                      <h4 class="sub-menu__links__column__title">Popular Tutorials</h4>
+                      <div class="sub-menu__link">
+                        <div class="sub-menu__link__row">
+                          <div class="sub-menu__link__column">
+                            <a title="C Data Types" href="/c-programming/c-data-types" class="sub-menu__link__column">Data
+                              Types</a>
+                          </div>
+                          <div class="sub-menu__link__column">
+                            <a title="C Operators" href="/c-programming/c-operators"
+                              class="sub-menu__link__column">Operators</a>
+                          </div>
+                        </div>
+                        <div class="sub-menu__link__row">
+                          <div class="sub-menu__link__column">
+                            <a title="C if...else Statement" href="/c-programming/c-if-else-statement"
+                              class="sub-menu__link__column">if...else</a>
+                          </div>
+                          <div class="sub-menu__link__column">
+                            <a title="C for Loop" href="/c-programming/c-for-loop" class="sub-menu__link__column">for
+                              Loops</a>
+                          </div>
+                        </div>
+                        <div class="sub-menu__link__row">
+                          <div class="sub-menu__link__column">
+                            <a title="C Functions" href="/c-programming/c-functions" class="sub-menu__link__column">C
+                              Functions</a>
+                          </div>
+                          <div class="sub-menu__link__column">
+                            <a title="C Arrays" href="/c-programming/c-arrays" class="sub-menu__link__column">Arrays</a>
+                          </div>
+                        </div>
+                        <div class="sub-menu__link__row">
+                          <div class="sub-menu__link__column">
+                            <a title="C Pointers" href="/c-programming/c-pointers"
+                              class="sub-menu__link__column">Pointers</a>
+                          </div>
+                          <div class="sub-menu__link__column">
+                            <a title="Strings in C" href="/c-programming/c-strings"
+                              class="sub-menu__link__column">Strings</a>
+                          </div>
+                        </div>
+                        <div class="sub-menu__link__row">
+                          <div class="sub-menu__link__column">
+                            <a title="C struct" href="/c-programming/c-structures" class="sub-menu__link__column">struct
+                              Type</a>
+                          </div>
+                          <div class="sub-menu__link__column">
+                            <a title="C File Operation" href="/c-programming/c-file-input-output"
+                              class="sub-menu__link__column">File I/O</a>
+                          </div>
+                        </div>
+                      </div>
+                      <a title="C Tutorials" href="/c-programming" class="d-flex align-items-center font-weight-500">
+                        View all tutorials
+                        <svg class="programiz-icon programiz-icon--small ml-2x">
+                          <use xlink:href="/sites/all/themes/programiz/assets/feather-sprite.svg#arrow-right"></use>
+                        </svg>
+                      </a>
+                    </div>
+                    <div class="sub-menu__links__column sub-menu__links__column--right">
+                      <h4 class="sub-menu__links__column__title">Reference Materials</h4>
+                      <div class="sub-menu__link">
+                        <div class="sub-menu__link__row">
+                          <a title="C String Functions" href="/c-programming/library-function/string.h"
+                            class="btn btn--gray btn--small btn--block d-flex align-items-center">
+                            string.h
+                            <svg class="programiz-icon programiz-icon--small ml-auto">
+                              <use xlink:href="/sites/all/themes/programiz/assets/feather-sprite.svg#arrow-right"></use>
+                            </svg>
+                          </a>
+                        </div>
+                        <div class="sub-menu__link__row">
+                          <a title="C Math Functions" href="/c-programming/library-function/math.h"
+                            class="btn btn--gray btn--small btn--block d-flex align-items-center">
+                            math.h
+                            <svg class="programiz-icon programiz-icon--small ml-auto">
+                              <use xlink:href="/sites/all/themes/programiz/assets/feather-sprite.svg#arrow-right"></use>
+                            </svg>
+                          </a>
+                        </div>
+                        <div class="sub-menu__link__row">
+                          <a title="C ctype.h Functions" href="/c-programming/library-function/ctype.h"
+                            class="btn btn--gray btn--small btn--block d-flex align-items-center">
+                            ctype.h
+                            <svg class="programiz-icon programiz-icon--small ml-auto">
+                              <use xlink:href="/sites/all/themes/programiz/assets/feather-sprite.svg#arrow-right"></use>
+                            </svg>
+                          </a>
+                        </div>
+                        <a title="C Reference"" href=" /c-programming/library-function"
+                          class="d-flex align-items-center font-weight-500">
+                          View all
+                          <svg class="programiz-icon programiz-icon--small ml-2x">
+                            <use xlink:href="/sites/all/themes/programiz/assets/feather-sprite.svg#arrow-right"></use>
+                          </svg>
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+  
+                <div class="sub-menu__contents sub-menu__contents--cpp" id="t-cpp">
+                  <div class="sub-menu__cta">
+                    <a href="/cpp-programming" title="C++ Tutorials"
+                      class="btn btn--primary btn--xlarge d-flex align-items-center">
+                      <span for="" class="btn__label">Start Learning C++</span>
+                      <svg class="programiz-icon ml-2x">
+                        <use xlink:href="/sites/all/themes/programiz/assets/feather-sprite.svg#arrow-right"></use>
+                      </svg>
+                    </a>
+                    <button class="btn btn--skeleton ml-auto">
+                      <svg class="programiz-icon">
+                        <use xlink:href="/sites/all/themes/programiz/assets/feather-sprite.svg#x"></use>
+                      </svg>
+                    </button>
+                  </div>
+  
+                  <div class="sub-menu__links">
+                    <div class="sub-menu__links__column sub-menu__links__column--left">
+                      <h4 class="sub-menu__links__column__title">Popular Tutorials</h4>
+                      <div class="sub-menu__link">
+                        <div class="sub-menu__link__row">
+                          <div class="sub-menu__link__column">
+                            <a title="C++ if...else" href="/cpp-programming/if-else"
+                              class="sub-menu__link__column">if...else</a>
+                          </div>
+                          <div class="sub-menu__link__column">
+                            <a title="C++ for Loop" href="/cpp-programming/for-loop" class="sub-menu__link__column">for
+                              Loop</a>
+                          </div>
+                        </div>
+                        <div class="sub-menu__link__row">
+                          <div class="sub-menu__link__column">
+                            <a title="C++ while Loop" href="/cpp-programming/do-while-loop"
+                              class="sub-menu__link__column">while Loop</a>
+                          </div>
+                          <div class="sub-menu__link__column">
+                            <a title="C++ Functions" href="/cpp-programming/function"
+                              class="sub-menu__link__column">Functions</a>
+                          </div>
+                        </div>
+                        <div class="sub-menu__link__row">
+                          <div class="sub-menu__link__column">
+                            <a title="C++ Array" href="/cpp-programming/arrays" class="sub-menu__link__column">Arrays</a>
+                          </div>
+                          <div class="sub-menu__link__column">
+                            <a title="C++ Pointers" href="/cpp-programming/pointers"
+                              class="sub-menu__link__column">Pointers</a>
+                          </div>
+                        </div>
+                        <div class="sub-menu__link__row">
+                          <div class="sub-menu__link__column">
+                            <a title="C++ Strings" href="/cpp-programming/strings"
+                              class="sub-menu__link__column">Strings</a>
+                          </div>
+                          <div class="sub-menu__link__column">
+                            <a title="C++ Class and Objects" href="/cpp-programming/object-class"
+                              class="sub-menu__link__column">Class & Objects</a>
+                          </div>
+                        </div>
+                        <div class="sub-menu__link__row">
+                          <div class="sub-menu__link__column">
+                            <a title="C++ Inheritance" href="/cpp-programming/inheritance"
+                              class="sub-menu__link__column">Inheritance</a>
+                          </div>
+                          <div class="sub-menu__link__column">
+                            <a title="C++ Virtual Function" href="/cpp-programming/virtual-functions"
+                              class="sub-menu__link__column">Virtual Function</a>
+                          </div>
+                        </div>
+                      </div>
+                      <a title="C++ Tutorials" href="/cpp-programming" class="d-flex align-items-center font-weight-500">
+                        View all tutorials
+                        <svg class="programiz-icon programiz-icon--small ml-2x">
+                          <use xlink:href="/sites/all/themes/programiz/assets/feather-sprite.svg#arrow-right"></use>
+                        </svg>
+                      </a>
+                    </div>
+                    <div class="sub-menu__links__column sub-menu__links__column--right">
+                      <h4 class="sub-menu__links__column__title">Reference Materials</h4>
+                      <div class="sub-menu__link">
+                        <div class="sub-menu__link__row">
+                          <a href="/cpp-programming/library-function/iostream" title="C++ iostream"
+                            class="btn btn--gray btn--small btn--block d-flex align-items-center">
+                            iostream
+                            <svg class="programiz-icon programiz-icon--small ml-auto">
+                              <use xlink:href="/sites/all/themes/programiz/assets/feather-sprite.svg#arrow-right"></use>
+                            </svg>
+                          </a>
+                        </div>
+                        <div class="sub-menu__link__row">
+                          <a href="/cpp-programming/library-function/cmath" title="C++ cmath"
+                            class="btn btn--gray btn--small btn--block d-flex align-items-center">
+                            cmath
+                            <svg class="programiz-icon programiz-icon--small ml-auto">
+                              <use xlink:href="/sites/all/themes/programiz/assets/feather-sprite.svg#arrow-right"></use>
+                            </svg>
+                          </a>
+                        </div>
+                        <div class="sub-menu__link__row">
+                          <a href="/cpp-programming/library-function/cstring" title="C++ cstring"
+                            class="btn btn--gray btn--small btn--block d-flex align-items-center">
+                            cstring
+                            <svg class="programiz-icon programiz-icon--small ml-auto">
+                              <use xlink:href="/sites/all/themes/programiz/assets/feather-sprite.svg#arrow-right"></use>
+                            </svg>
+                          </a>
+                        </div>
+                        <div class="sub-menu__link__row">
+                          <a href="/cpp-programming/library-function/ctime" title="C++ ctime"
+                            class="btn btn--gray btn--small btn--block d-flex align-items-center">
+                            ctime
+                            <svg class="programiz-icon programiz-icon--small ml-auto">
+                              <use xlink:href="/sites/all/themes/programiz/assets/feather-sprite.svg#arrow-right"></use>
+                            </svg>
+                          </a>
+                        </div>
+                        <a title="C++ Reference"" href=" /cpp-programming/library-function"
+                          class="d-flex align-items-center font-weight-500">
+                          View all
+                          <svg class="programiz-icon programiz-icon--small ml-2x">
+                            <use xlink:href="/sites/all/themes/programiz/assets/feather-sprite.svg#arrow-right"></use>
+                          </svg>
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+  
+                <div class="sub-menu__contents sub-menu__contents--java" id="t-java">
+                  <div class="sub-menu__cta">
+                    <a href="/java-programming" title="Java Tutorials"
+                      class="btn btn--primary btn--xlarge d-flex align-items-center">
+                      <span for="" class="btn__label">Start Learning Java</span>
+                      <svg class="programiz-icon ml-2x">
+                        <use xlink:href="/sites/all/themes/programiz/assets/feather-sprite.svg#arrow-right"></use>
+                      </svg>
+                    </a>
+                    <button class="btn btn--skeleton ml-auto">
+                      <svg class="programiz-icon">
+                        <use xlink:href="/sites/all/themes/programiz/assets/feather-sprite.svg#x"></use>
+                      </svg>
+                    </button>
+                  </div>
+  
+                  <div class="sub-menu__links">
+                    <div class="sub-menu__links__column sub-menu__links__column--left">
+                      <h4 class="sub-menu__links__column__title">Popular Tutorials</h4>
+                      <div class="sub-menu__link">
+                        <div class="sub-menu__link__row">
+                          <div class="sub-menu__link__column">
+                            <a title="Java Hello World" href="/java-programming/hello-world"
+                              class="sub-menu__link__column">"Hello World" Program</a>
+                          </div>
+                          <div class="sub-menu__link__column">
+                            <a title="Java if...else" href="/java-programming/if-else-statement"
+                              class="sub-menu__link__column">if...else</a>
+                          </div>
+                        </div>
+                        <div class="sub-menu__link__row">
+                          <div class="sub-menu__link__column">
+                            <a title="Java for Loop" href="/java-programming/for-loop" class="sub-menu__link__column">for
+                              Loop</a>
+                          </div>
+                          <div class="sub-menu__link__column">
+                            <a title="Java Arrays" href="/java-programming/arrays"
+                              class="sub-menu__link__column">Arrays</a>
+                          </div>
+                        </div>
+                        <div class="sub-menu__link__row">
+                          <div class="sub-menu__link__column">
+                            <a title="Java Class and Objects" href="/java-programming/class-objects"
+                              class="sub-menu__link__column">Class &amp; Objects</a>
+                          </div>
+                          <div class="sub-menu__link__column">
+                            <a title="Java Inheritance" href="/java-programming/inheritance"
+                              class="sub-menu__link__column">Inheritance</a>
+                          </div>
+                        </div>
+                        <div class="sub-menu__link__row">
+                          <div class="sub-menu__link__column">
+                            <a title="Java Reflection" href="/java-programming/reflection"
+                              class="sub-menu__link__column">Reflection</a>
+                          </div>
+                          <div class="sub-menu__link__column">
+                            <a title="Java Exception Handling" href="/java-programming/exception-handling"
+                              class="sub-menu__link__column">Exception Handling</a>
+                          </div>
+                        </div>
+                        <div class="sub-menu__link__row">
+                          <div class="sub-menu__link__column">
+                            <a title="Java ArrayList" href="/java-programming/arraylist"
+                              class="sub-menu__link__column">ArrayList</a>
+                          </div>
+                          <div class="sub-menu__link__column">
+                            <a title="Java hashmap" href="/java-programming/hashmap" class="sub-menu__link__column">Java
+                              HashMap</a>
+                          </div>
+                        </div>
+                      </div>
+                      <a title="Java Tutorials" href="/java-programming"
+                        class="d-flex align-items-center font-weight-500">
+                        View all tutorials
+                        <svg class="programiz-icon programiz-icon--small ml-2x">
+                          <use xlink:href="/sites/all/themes/programiz/assets/feather-sprite.svg#arrow-right"></use>
+                        </svg>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+  
+                <div class="sub-menu__contents sub-menu__contents--kotlin" id="t-kotlin">
+                  <div class="sub-menu__cta">
+                    <a href="/kotlin-programming" title="Kotlin Tutorials"
+                      class="btn btn--primary btn--xlarge d-flex align-items-center">
+                      <span for="" class="btn__label">Start Learning Kotlin</span>
+                      <svg class="programiz-icon ml-2x">
+                        <use xlink:href="/sites/all/themes/programiz/assets/feather-sprite.svg#arrow-right"></use>
+                      </svg>
+                    </a>
+                    <button class="btn btn--skeleton ml-auto">
+                      <svg class="programiz-icon">
+                        <use xlink:href="/sites/all/themes/programiz/assets/feather-sprite.svg#x"></use>
+                      </svg>
+                    </button>
+                  </div>
+  
+                  <div class="sub-menu__links">
+                    <div class="sub-menu__links__column sub-menu__links__column--left">
+                      <h4 class="sub-menu__links__column__title">Popular Tutorials</h4>
+                      <div class="sub-menu__link">
+                        <div class="sub-menu__link__row">
+                          <div class="sub-menu__link__column">
+                            <a title="Kotlin Hello World" href="/kotlin-programming/hello-world"
+                              class="sub-menu__link__column">"Hello World" Program</a>
+                          </div>
+                          <div class="sub-menu__link__column">
+                            <a title="Kotlin when Expression" href="/kotlin-programming/when-expression"
+                              class="sub-menu__link__column">when Expression</a>
+                          </div>
+                        </div>
+                        <div class="sub-menu__link__row">
+                          <div class="sub-menu__link__column">
+                            <a title="Kotlin for Loop" href="/kotlin-programming/for-loop"
+                              class="sub-menu__link__column">for Loop</a>
+                          </div>
+                          <div class="sub-menu__link__column">
+                            <a title="Kotlin while Loop" href="/kotlin-programming/while-loop"
+                              class="sub-menu__link__column">while Loop</a>
+                          </div>
+                        </div>
+                        <div class="sub-menu__link__row">
+                          <div class="sub-menu__link__column">
+                            <a title="Kotlin Function" href="/kotlin-programming/functions"
+                              class="sub-menu__link__column">Functions</a>
+                          </div>
+                          <div class="sub-menu__link__column">
+                            <a title="Kotlin Class and Objects" href="/kotlin-programming/class-objects"
+                              class="sub-menu__link__column">Class & Objects</a>
+                          </div>
+                        </div>
+                        <div class="sub-menu__link__row">
+                          <div class="sub-menu__link__column">
+                            <a title="Kotlin Inheritance" href="/kotlin-programming/inheritance"
+                              class="sub-menu__link__column">Inheritance</a>
+                          </div>
+                          <div class="sub-menu__link__column">
+                            <a title="Kotlin interfaces" href="/kotlin-programming/interfaces"
+                              class="sub-menu__link__column">Interfaces</a>
+                          </div>
+                        </div>
+                        <div class="sub-menu__link__row">
+                          <div class="sub-menu__link__column">
+                            <a title="Kotlin Data Class" href="/kotlin-programming/data-class"
+                              class="sub-menu__link__column">Data Class</a>
+                          </div>
+                          <div class="sub-menu__link__column">
+                            <a title="Kotlin Recursion" href="/kotlin-programming/recursion"
+                              class="sub-menu__link__column">Recursion</a>
+                          </div>
+                        </div>
+                      </div>
+                      <a title="Kotlin Tutorials" href="/kotlin-programming"
+                        class="d-flex align-items-center font-weight-500">
+                        View all tutorials
+                        <svg class="programiz-icon programiz-icon--small ml-2x">
+                          <use xlink:href="/sites/all/themes/programiz/assets/feather-sprite.svg#arrow-right"></use>
+                        </svg>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+  
+                <div class="sub-menu__contents sub-menu__contents--swift" id="t-swift">
+                  <div class="sub-menu__cta">
+                    <a href="/swift-programming" title="Swift Tutorials"
+                      class="btn btn--primary btn--xlarge d-flex align-items-center">
+                      <span for="" class="btn__label">Start Learning Swift</span>
+                      <svg class="programiz-icon ml-2x">
+                        <use xlink:href="/sites/all/themes/programiz/assets/feather-sprite.svg#arrow-right"></use>
+                      </svg>
+                    </a>
+                    <button class="btn btn--skeleton ml-auto">
+                      <svg class="programiz-icon">
+                        <use xlink:href="/sites/all/themes/programiz/assets/feather-sprite.svg#x"></use>
+                      </svg>
+                    </button>
+                  </div>
+  
+                  <div class="sub-menu__links">
+                    <div class="sub-menu__links__column sub-menu__links__column--left">
+                      <h4 class="sub-menu__links__column__title">Popular Tutorials</h4>
+                      <div class="sub-menu__link">
+                        <div class="sub-menu__link__row">
+                          <div class="sub-menu__link__column">
+                            <a title="Swift Hello World" href="/swift-programming/hello-world"
+                              class="sub-menu__link__column">"Hello World" Program</a>
+                          </div>
+                          <div class="sub-menu__link__column">
+                            <a title="Swift while Loop" href="/swift-programming/repeat-while-loop"
+                              class="sub-menu__link__column">while Loop</a>
+                          </div>
+                        </div>
+                        <div class="sub-menu__link__row">
+                          <div class="sub-menu__link__column">
+                            <a title="Swift if...else" href="/swift-programming/if-else-statement"
+                              class="sub-menu__link__column">if...else Statement</a>
+                          </div>
+                          <div class="sub-menu__link__column">
+                            <a title="Swift Arrays" href="/swift-programming/arrays"
+                              class="sub-menu__link__column">Arrays</a>
+                          </div>
+                        </div>
+                        <div class="sub-menu__link__row">
+                          <div class="sub-menu__link__column">
+                            <a title="Swift Functions" href="/swift-programming/functions"
+                              class="sub-menu__link__column">Functions</a>
+                          </div>
+                          <div class="sub-menu__link__column">
+                            <a title="Swift Dictionary" href="/swift-programming/dictionary"
+                              class="sub-menu__link__column">Dictionary</a>
+                          </div>
+                        </div>
+                        <div class="sub-menu__link__row">
+                          <div class="sub-menu__link__column">
+                            <a title="Swift Sets" href="/swift-programming/sets" class="sub-menu__link__column">Sets</a>
+                          </div>
+                          <div class="sub-menu__link__column">
+                            <a title="Swift Optionals" href="/swift-programming/optionals"
+                              class="sub-menu__link__column">Optionals</a>
+                          </div>
+                        </div>
+                        <div class="sub-menu__link__row">
+                          <div class="sub-menu__link__column">
+                            <a title="Swift Ranges" href="/swift-programming/ranges"
+                              class="sub-menu__link__column">Ranges</a>
+                          </div>
+                          <div class="sub-menu__link__column">
+                            <a title="Swift Closures" href="/swift-programming/closures"
+                              class="sub-menu__link__column">Closures</a>
+                          </div>
+                        </div>
+                      </div>
+                      <a title="Swift Tutorials" href="/swift-programming"
+                        class="d-flex align-items-center font-weight-500">
+                        View all tutorials
+                        <svg class="programiz-icon programiz-icon--small ml-2x">
+                          <use xlink:href="/sites/all/themes/programiz/assets/feather-sprite.svg#arrow-right"></use>
+                        </svg>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+  
+                <div class="sub-menu__contents sub-menu__contents--csharp" id="t-csharp">
+                  <div class="sub-menu__cta">
+                    <a href="/csharp-programming" title="C# Tutorials"
+                      class="btn btn--primary btn--xlarge d-flex align-items-center">
+                      <span for="" class="btn__label">Start Learning C#</span>
+                      <svg class="programiz-icon ml-2x">
+                        <use xlink:href="/sites/all/themes/programiz/assets/feather-sprite.svg#arrow-right"></use>
+                      </svg>
+                    </a>
+                    <button class="btn btn--skeleton ml-auto">
+                      <svg class="programiz-icon">
+                        <use xlink:href="/sites/all/themes/programiz/assets/feather-sprite.svg#x"></use>
+                      </svg>
+                    </button>
+                  </div>
+  
+                  <div class="sub-menu__links">
+                    <div class="sub-menu__links__column sub-menu__links__column--left">
+                      <h4 class="sub-menu__links__column__title">Popular Tutorials</h4>
+                      <div class="sub-menu__link">
+                        <div class="sub-menu__link__row">
+                          <div class="sub-menu__link__column">
+                            <a title="C# Hello World" href="/csharp-programming/hello-world"
+                              class="sub-menu__link__column">"Hello World" Program</a>
+                          </div>
+                          <div class="sub-menu__link__column">
+                            <a title="C# Operators" href="/csharp-programming/operators"
+                              class="sub-menu__link__column">Operators</a>
+                          </div>
+                        </div>
+                        <div class="sub-menu__link__row">
+                          <div class="sub-menu__link__column">
+                            <a title="C# if else Statement" href="/csharp-programming/if-else-statement"
+                              class="sub-menu__link__column">if...else Statement</a>
+                          </div>
+                          <div class="sub-menu__link__column">
+                            <a title="C# foreach Loop" href="/csharp-programming/foreach-loop"
+                              class="sub-menu__link__column">foreach Loop</a>
+                          </div>
+                        </div>
+                        <div class="sub-menu__link__row">
+                          <div class="sub-menu__link__column">
+                            <a title="C# for Loop" href="/csharp-programming/for-loop" class="sub-menu__link__column">for
+                              Loop</a>
+                          </div>
+                          <div class="sub-menu__link__column">
+                            <a title="C# while Loop" href="/csharp-programming/do-while-loop"
+                              class="sub-menu__link__column">while Loop</a>
+                          </div>
+                        </div>
+                        <div class="sub-menu__link__row">
+                          <div class="sub-menu__link__column">
+                            <a title="C# switch Statement" href="/csharp-programming/switch-statement"
+                              class="sub-menu__link__column">switch Statement</a>
+                          </div>
+                          <div class="sub-menu__link__column">
+                            <a title="C# Partial Classes and Methods" href="/csharp-programming/partial-class-and-methods"
+                              class="sub-menu__link__column">Partial Method & Class</a>
+                          </div>
+                        </div>
+                        <div class="sub-menu__link__row">
+                          <div class="sub-menu__link__column">
+                            <a title="C# Namespaces" href="/csharp-programming/namespaces"
+                              class="sub-menu__link__column">Namespaces</a>
+                          </div>
+                          <div class="sub-menu__link__column">
+                            <a title="C# Preprocessor Directives" href="/csharp-programming/preprocessor-directives"
+                              class="sub-menu__link__column">Preprocessor Directives</a>
+                          </div>
+                        </div>
+                      </div>
+                      <a title="C# Tutorials" href="/csharp-programming"
+                        class="d-flex align-items-center font-weight-500">
+                        View all tutorials
+                        <svg class="programiz-icon programiz-icon--small ml-2x">
+                          <use xlink:href="/sites/all/themes/programiz/assets/feather-sprite.svg#arrow-right"></use>
+                        </svg>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+  
+                <div class="sub-menu__contents sub-menu__contents--dsa" id="t-dsa">
+                  <div class="sub-menu__cta">
+                    <a title="Data Structure and Algorithms" href="/dsa"
+                      class="btn btn--primary btn--xlarge d-flex align-items-center">
+                      <span for="" class="btn__label">Start Learning DSA</span>
+                      <svg class="programiz-icon ml-2x">
+                        <use xlink:href="/sites/all/themes/programiz/assets/feather-sprite.svg#arrow-right"></use>
+                      </svg>
+                    </a>
+                    <button class="btn btn--skeleton ml-auto">
+                      <svg class="programiz-icon">
+                        <use xlink:href="/sites/all/themes/programiz/assets/feather-sprite.svg#x"></use>
+                      </svg>
+                    </button>
+                  </div>
+  
+                  <div class="sub-menu__links">
+                    <div class="sub-menu__links__column sub-menu__links__column--left">
+                      <h4 class="sub-menu__links__column__title">Popular Tutorials</h4>
+                      <div class="sub-menu__link">
+                        <div class="sub-menu__link__row">
+                          <div class="sub-menu__link__column">
+                            <a title="Selection Sort" href="/dsa/selection-sort" class="sub-menu__link__column">Selection
+                              Sort</a>
+                          </div>
+                          <div class="sub-menu__link__column">
+                            <a title="Bubble Sort" href="/dsa/bubble-sort" class="sub-menu__link__column">Bubble Sort</a>
+                          </div>
+                        </div>
+                        <div class="sub-menu__link__row">
+                          <div class="sub-menu__link__column">
+                            <a title="Heap Sort" href="/dsa/heap-sort" class="sub-menu__link__column">Heap Sort</a>
+                          </div>
+                          <div class="sub-menu__link__column">
+                            <a title="Quicksort" href="/dsa/quick-sort" class="sub-menu__link__column">Quicksort</a>
+                          </div>
+                        </div>
+                        <div class="sub-menu__link__row">
+                          <div class="sub-menu__link__column">
+                            <a title="Stack" href="/dsa/stack" class="sub-menu__link__column">Stack Structure</a>
+                          </div>
+                          <div class="sub-menu__link__column">
+                            <a title="Linked List" href="/dsa/linked-list" class="sub-menu__link__column">Linked List</a>
+                          </div>
+                        </div>
+                        <div class="sub-menu__link__row">
+                          <div class="sub-menu__link__column">
+                            <a title="Tree Data Structure" href="/dsa/trees" class="sub-menu__link__column">Tree
+                              Structure</a>
+                          </div>
+                          <div class="sub-menu__link__column">
+                            <a title="Tree Traversal" href="/dsa/tree-traversal" class="sub-menu__link__column">Tree
+                              Traversal</a>
+                          </div>
+                        </div>
+                        <div class="sub-menu__link__row">
+                          <div class="sub-menu__link__column">
+                            <a title="Dijkstra's Algorithm" href="/dsa/dijkstra-algorithm"
+                              class="sub-menu__link__column">Dijkstra's Algorithm</a>
+                          </div>
+                          <div class="sub-menu__link__column">
+                            <a title="Prim's Algorithm" href="/dsa/prim-algorithm" class="sub-menu__link__column">Prim's
+                              Algorithm</a>
+                          </div>
+                        </div>
+                      </div>
+                      <a title="Data Structure & Algorithms" href="/dsa"
+                        class="d-flex align-items-center font-weight-500">
+                        View all tutorials
+                        <svg class="programiz-icon programiz-icon--small ml-2x">
+                          <use xlink:href="/sites/all/themes/programiz/assets/feather-sprite.svg#arrow-right"></use>
+                        </svg>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+      
+        
+    
+    
+    
+    <!-- Desktop view only -->
+<div class="sub-menu sub-menu--pc sub-menu--pc--examples">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-sm-10">
+        <div class="sub-menu__wrap">
+          <div class="tabbed-content tabbed-content--no-border">
+            <div class="tabbed-content__left tabbed-content__left--small">
+
+              <div class="tabbed-link-container">
+                <div class="tabbed-link">
+                  <a title="Python" href="#examples-python" class="tabbed-link__node" data-language="python">Python</a>
+                </div>
+                <div class="tabbed-link"><a title="C" href="#examples-cprogramming" class="tabbed-link__node"
+                    data-language="c">C</a>
+                </div>
+                <div class="tabbed-link"><a title="C++" href="#examples-cpp" class="tabbed-link__node"
+                    data-language="cpp">C++</a>
+                </div>
+                <div class="tabbed-link"><a title="Java" href="#examples-java" class="tabbed-link__node"
+                    data-language="java">Java</a>
+                </div>
+                <div class="tabbed-link"><a title="Kotlin" href="#examples-kotlin" class="tabbed-link__node"
+                    data-language="kotlin">Kotlin</a>
+                </div>
+              </div>
+
+            </div>
+            <div class="tabbed-content__right">
+              <div class="sub-menu__contents sub-menu__contents--python" id="examples-python">
+                <div class="sub-menu__cta"><a href="/python-programming/examples" title="Python Examples"
+                    class="btn btn--primary btn--xlarge d-flex align-items-center">
+                    <span for="" class="btn__label">Explore Python Examples</span>
+                    <svg class="programiz-icon ml-2x">
+                      <use xlink:href="/sites/all/themes/programiz/assets/feather-sprite.svg#arrow-right"></use>
+                    </svg>
+                  </a>
+                  <button class="btn btn--skeleton ml-auto">
+                    <svg class="programiz-icon">
+                      <use xlink:href="/sites/all/themes/programiz/assets/feather-sprite.svg#x"></use>
+                    </svg>
+                  </button>
+                </div>
+
+                <div class="sub-menu__links">
+                  <div class="sub-menu__links__column sub-menu__links__column--left">
+                    <h4 class="sub-menu__links__column__title">Popular Examples</h4>
+                    <div class="sub-menu__link">
+                      <div class="sub-menu__link__row">
+                        <div class="sub-menu__link__column">
+                          <a title="Add two numbers" href="/python-programming/examples/add-number"
+                            class="sub-menu__link__column">Add two numbers</a>
+                        </div>
+                      </div>
+                      <div class="sub-menu__link__row">
+                        <div class="sub-menu__link__column">
+                          <a title="Check prime number" href="/python-programming/examples/prime-number"
+                            class="sub-menu__link__column">Check prime number</a>
+                        </div>
+                      </div>
+                      <div class="sub-menu__link__row">
+                        <div class="sub-menu__link__column">
+                          <a title="Find the factorial of a number" href="/python-programming/examples/factorial"
+                            class="sub-menu__link__column">Find the factorial of a number</a>
+                        </div>
+                      </div>
+                      <div class="sub-menu__link__row">
+                        <div class="sub-menu__link__column">
+                          <a title="Print the Fibonacci sequence" href="/python-programming/examples/fibonacci-sequence"
+                            class="sub-menu__link__column">Print the Fibonacci sequence</a>
+                        </div>
+                      </div>
+                      <div class="sub-menu__link__row">
+                        <div class="sub-menu__link__column">
+                          <a title="Check whether a year is a leap year or not"
+                            href="/python-programming/examples/leap-year" class="sub-menu__link__column">Check leap
+                            year</a>
+                        </div>
+                      </div>
+                    </div>
+                    <a title="Python Examples" href="/python-programming/examples"
+                      class="d-flex align-items-center font-weight-500">
+                      View all examples
+                      <svg class="programiz-icon programiz-icon--small ml-2x">
+                        <use xlink:href="/sites/all/themes/programiz/assets/feather-sprite.svg#arrow-right"></use>
+                      </svg>
+                    </a>
+                  </div>
+                </div>
+              </div>
+
+              <div class="sub-menu__contents sub-menu__contents--c" id="examples-cprogramming">
+                <div class="sub-menu__cta">
+                  <a href="/c-programming/examples" title="C Examples"
+                    class="btn btn--primary btn--xlarge d-flex align-items-center">
+                    <span for="" class="btn__label">Explore C Examples</span>
+                    <svg class="programiz-icon ml-2x">
+                      <use xlink:href="/sites/all/themes/programiz/assets/feather-sprite.svg#arrow-right"></use>
+                    </svg>
+                  </a>
+                  <button class="btn btn--skeleton ml-auto">
+                    <svg class="programiz-icon">
+                      <use xlink:href="/sites/all/themes/programiz/assets/feather-sprite.svg#x"></use>
+                    </svg>
+                  </button>
+                </div>
+
+                <div class="sub-menu__links">
+                  <div class="sub-menu__links__column sub-menu__links__column--left">
+                    <h4 class="sub-menu__links__column__title">Popular Examples</h4>
+                    <div class="sub-menu__link">
+                      <div class="sub-menu__link__row">
+                        <div class="sub-menu__link__column">
+                          <a title="Check whether a number is even or odd" href="/c-programming/examples/even-odd"
+                            class="sub-menu__link__column">Check odd/even number</a>
+                        </div>
+                      </div>
+                      <div class="sub-menu__link__row">
+                        <div class="sub-menu__link__column">
+                          <a title="Find roots of a quadratic equation" href="/c-programming/examples/quadratic-roots"
+                            class="sub-menu__link__column">Find roots of a quadratic equation</a>
+                        </div>
+                      </div>
+                      <div class="sub-menu__link__row">
+                        <div class="sub-menu__link__column">
+                          <a title="Print Pyramids and Patterns" href="/c-programming/examples/pyramid-pattern"
+                            class="sub-menu__link__column">Print Pyramids and Patterns</a>
+                        </div>
+                      </div>
+                      <div class="sub-menu__link__row">
+                        <div class="sub-menu__link__column">
+                          <a title="Check prime number" href="/c-programming/examples/prime-number"
+                            class="sub-menu__link__column">Check prime number</a>
+                        </div>
+                      </div>
+                      <div class="sub-menu__link__row">
+                        <div class="sub-menu__link__column">
+                          <a title="Print the Fibonacci series" href="/c-programming/examples/fibonacci-series"
+                            class="sub-menu__link__column">Print the Fibonacci series</a>
+                        </div>
+                      </div>
+                    </div>
+                    <a title="C Examples" href="/c-programming/examples"
+                      class="d-flex align-items-center font-weight-500">
+                      View all examples
+                      <svg class="programiz-icon programiz-icon--small ml-2x">
+                        <use xlink:href="/sites/all/themes/programiz/assets/feather-sprite.svg#arrow-right"></use>
+                      </svg>
+                    </a>
+                  </div>
+                </div>
+              </div>
+
+              <div class="sub-menu__contents sub-menu__contents--cpp" id="examples-cpp">
+                <div class="sub-menu__cta">
+                  <a href="/cpp-programming" title="C++ Examples"
+                    class="btn btn--primary btn--xlarge d-flex align-items-center">
+                    <span for="" class="btn__label">Explore C++ Examples</span>
+                    <svg class="programiz-icon ml-2x">
+                      <use xlink:href="/sites/all/themes/programiz/assets/feather-sprite.svg#arrow-right"></use>
+                    </svg>
+                  </a>
+                  <button class="btn btn--skeleton ml-auto">
+                    <svg class="programiz-icon">
+                      <use xlink:href="/sites/all/themes/programiz/assets/feather-sprite.svg#x"></use>
+                    </svg>
+                  </button>
+                </div>
+
+                <div class="sub-menu__links">
+                  <div class="sub-menu__links__column sub-menu__links__column--left">
+                    <h4 class="sub-menu__links__column__title">Popular Examples</h4>
+                    <div class="sub-menu__link">
+                      <div class="sub-menu__link__row">
+                        <div class="sub-menu__link__column">
+                          <a title="Create a simple calculator" href="/cpp-programming/examples/calculator-switch-case"
+                            class="sub-menu__link__column">Create a calculator to add subtract multiply & divide</a>
+                        </div>
+                      </div>
+                      <div class="sub-menu__link__row">
+                        <div class="sub-menu__link__column">
+                          <a title="Check prime number" href="/cpp-programming/examples/prime-number"
+                            class="sub-menu__link__column">Check prime number</a>
+                        </div>
+                      </div>
+                      <div class="sub-menu__link__row">
+                        <div class="sub-menu__link__column">
+                          <a title="Print the Fibonacci sequence" href="/cpp-programming/examples/fibonacci-series"
+                            class="sub-menu__link__column">Print the Fibonacci sequence</a>
+                        </div>
+                      </div>
+                      <div class="sub-menu__link__row">
+                        <div class="sub-menu__link__column">
+                          <a title="Check if a number is palindrome or not"
+                            href="/cpp-programming/examples/palindrome-number" class="sub-menu__link__column">Check if a
+                            number is palindrome or not</a>
+                        </div>
+                      </div>
+                      <div class="sub-menu__link__row">
+                        <div class="sub-menu__link__column">
+                          <a title="Program to multiply matrix" href="/cpp-programming/examples/matrix-multiplication"
+                            class="sub-menu__link__column">Program to multiply matrix</a>
+                        </div>
+                      </div>
+                    </div>
+                    <a title="C++ Examples" href="/cpp-programming/examples"
+                      class="d-flex align-items-center font-weight-500">
+                      View all examples
+                      <svg class="programiz-icon programiz-icon--small ml-2x">
+                        <use xlink:href="/sites/all/themes/programiz/assets/feather-sprite.svg#arrow-right"></use>
+                      </svg>
+                    </a>
+                  </div>
+                </div>
+              </div>
+
+              <div class="sub-menu__contents sub-menu__contents--java" id="examples-java">
+                <div class="sub-menu__cta">
+                  <a title="Java Examples" href="/java-programming/examples"
+                    class="btn btn--primary btn--xlarge d-flex align-items-center">
+                    <span for="" class="btn__label">Explore Java Examples</span>
+                    <svg class="programiz-icon ml-2x">
+                      <use xlink:href="/sites/all/themes/programiz/assets/feather-sprite.svg#arrow-right"></use>
+                    </svg>
+                  </a>
+                  <button class="btn btn--skeleton ml-auto">
+                    <svg class="programiz-icon">
+                      <use xlink:href="/sites/all/themes/programiz/assets/feather-sprite.svg#x"></use>
+                    </svg>
+                  </button>
+                </div>
+
+                <div class="sub-menu__links">
+                  <div class="sub-menu__links__column sub-menu__links__column--left">
+                    <h4 class="sub-menu__links__column__title">Popular Examples</h4>
+                    <div class="sub-menu__link">
+                      <div class="sub-menu__link__row">
+                        <div class="sub-menu__link__column">
+                          <a title="Check prime number" href="/java-programming/examples/prime-number"
+                            class="sub-menu__link__column">Check prime number</a>
+                        </div>
+                      </div>
+                      <div class="sub-menu__link__row">
+                        <div class="sub-menu__link__column">
+                          <a title="Print the Fibonacci series" href="/java-programming/examples/fibonacci-series"
+                            class="sub-menu__link__column">Print the Fibonacci series</a>
+                        </div>
+                      </div>
+                      <div class="sub-menu__link__row">
+                        <div class="sub-menu__link__column">
+                          <a title="Print Pyramids and Patterns" href="/java-programming/examples/pyramid-pattern"
+                            class="sub-menu__link__column">Print Pyramids and Patterns</a>
+                        </div>
+                      </div>
+                      <div class="sub-menu__link__row">
+                        <div class="sub-menu__link__column">
+                          <a title="Multiply two matrices" href="/java-programming/examples/multiplication-table"
+                            class="sub-menu__link__column">Multiply two matrices</a>
+                        </div>
+                      </div>
+                      <div class="sub-menu__link__row">
+                        <div class="sub-menu__link__column">
+                          <a title="Find the standard deviation" href="/java-programming/examples/standard-deviation"
+                            class="sub-menu__link__column">Find the standard deviation</a>
+                        </div>
+                      </div>
+                    </div>
+                    <a title="Java Examples" href="/java-programming/examples"
+                      class="d-flex align-items-center font-weight-500">
+                      View all examples
+                      <svg class="programiz-icon programiz-icon--small ml-2x">
+                        <use xlink:href="/sites/all/themes/programiz/assets/feather-sprite.svg#arrow-right"></use>
+                      </svg>
+                    </a>
+                  </div>
+                </div>
+              </div>
+
+              <div class="sub-menu__contents sub-menu__contents--kotlin" id="examples-kotlin">
+                <div class="sub-menu__cta">
+                  <a title="Kotlin Examples" href="/kotlin-programming/examples"
+                    class="btn btn--primary btn--xlarge d-flex align-items-center">
+                    <span for="" class="btn__label">Explore Kotlin Examples</span>
+                    <svg class="programiz-icon ml-2x">
+                      <use xlink:href="/sites/all/themes/programiz/assets/feather-sprite.svg#arrow-right"></use>
+                    </svg>
+                  </a>
+                  <button class="btn btn--skeleton ml-auto">
+                    <svg class="programiz-icon">
+                      <use xlink:href="/sites/all/themes/programiz/assets/feather-sprite.svg#x"></use>
+                    </svg>
+                  </button>
+                </div>
+
+                <div class="sub-menu__links">
+                  <div class="sub-menu__links__column sub-menu__links__column--left">
+                    <h4 class="sub-menu__links__column__title">Popular Examples</h4>
+                    <div class="sub-menu__link">
+                      <div class="sub-menu__link__row">
+                        <div class="sub-menu__link__column">
+                          <a title="Find the current date and time"
+                            href="/kotlin-programming/examples/current-date-time" class="sub-menu__link__column">Find
+                            the current date and time</a>
+                        </div>
+                      </div>
+                      <div class="sub-menu__link__row">
+                        <div class="sub-menu__link__column">
+                          <a title="Convert array to arraylist and vice-verse"
+                            href="/kotlin-programming/examples/convert-list-array"
+                            class="sub-menu__link__column">Convert
+                            array to arraylist and vice-verse</a>
+                        </div>
+                      </div>
+                      <div class="sub-menu__link__row">
+                        <div class="sub-menu__link__column">
+                          <a title="Convert string to date" href="/kotlin-programming/examples/string-date"
+                            class="sub-menu__link__column">Convert string to date</a>
+                        </div>
+                      </div>
+                      <div class="sub-menu__link__row">
+                        <div class="sub-menu__link__column">
+                          <a title="Join two lists" href="/kotlin-programming/examples/join-two-lists"
+                            class="sub-menu__link__column">Join two lists</a>
+                        </div>
+                      </div>
+                      <div class="sub-menu__link__row">
+                        <div class="sub-menu__link__column">
+                          <a title="Sort ArrayList of Custom Objects By Property"
+                            href="/kotlin-programming/examples/sort-custom-objects-property"
+                            class="sub-menu__link__column">Sort ArrayList of Custom Objects By Property</a>
+                        </div>
+                      </div>
+                    </div>
+                    <a title="Kotlin Examples" href="/kotlin-programming/examples"
+                      class="d-flex align-items-center font-weight-500">
+                      View all examples
+                      <svg class="programiz-icon programiz-icon--small ml-2x">
+                        <use xlink:href="/sites/all/themes/programiz/assets/feather-sprite.svg#arrow-right"></use>
+                      </svg>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+      
+  <!-- Get app link -->
+        
+    
+    
+    
+    <div class="get-app-link-wrapper">
+  <a class="get-app-link" href="#" target="_blank">
+    <img
+      class="app-link-items app-logo app-link-items--open-state"
+      src="//cdn.programiz.com/sites/all/themes/programiz/assets/sp_logo.svg"
+    />
+    <p class="app-link-items app-text app-link-items--closed-state">Get App</p>
+    <p class="app-link-items app-text app-link-items--open-state">Get Python Mobile App</p>
+    <button class="app-link-items btn app-close-icon app-link-items--open-state" type="button">
+      <svg class="programiz-icon"><use xlink:href="/sites/all/themes/programiz/assets/feather-sprite.svg#x" /></svg>
+    </button>
+  </a>
+</div>
+      
+  <div class="contents">
+    <div class="container">
+
+              <div class="toc-trigger"><button class="btn btn--secondary align-items-center btn--toc d-none d-md-flex">
+    <svg class="programiz-icon programiz-icon--small programiz-icon--reversed mr-1x">
+      <use xlink:href="/sites/all/themes/programiz/assets/feather-sprite.svg#log-in"/>
+    </svg>
+    TOC
+</button>
+<button class="btn btn--secondary align-items-center btn--toc d-flex d-md-none">
+    <svg class="programiz-icon programiz-icon--small programiz-icon--reversed">
+      <use xlink:href="/sites/all/themes/programiz/assets/feather-sprite.svg#log-in"/>
+    </svg>
+</button>
+</div>      
+      <div class="row">
+        <div class="col-sm-12 d-md-flex">
+
+                      <div class="left-bar left-bar--large-r-margin d-none d-lg-block">
+                
+    
+    
+    
+    <div class="menu-with-accordion mb-10x mobile-sidebar-tab">
+	<ul class="topmenu">
+		<li>
+			<h3>Python Introduction</h3>
+
+			<ul>
+				<li><a href="/python-programming/first-program" title="Getting started with Python"><span class="progress-list__single__icon-wrap"><svg class="programiz-icon progress-list__single__icon"> <use xlink:href="/sites/all/themes/programiz/assets/feather-sprite.svg#check-small"> </use> </svg> </span>Getting Started</a></li>
+				<li><a href="/python-programming/keywords-identifier" title="Python keywords and identifiers"><span class="progress-list__single__icon-wrap"><svg class="programiz-icon progress-list__single__icon"> <use xlink:href="/sites/all/themes/programiz/assets/feather-sprite.svg#check-small"> </use> </svg> </span>Keywords and Identifier</a></li>
+				<li><a href="/python-programming/statement-indentation-comments" title="Python statements and comments"><span class="progress-list__single__icon-wrap"><svg class="programiz-icon progress-list__single__icon"> <use xlink:href="/sites/all/themes/programiz/assets/feather-sprite.svg#check-small"> </use> </svg> </span>Statements &amp; Comments</a></li>
+				<li><a href="/python-programming/variables-constants-literals" title="Python Variables, Constants and Literals"><span class="progress-list__single__icon-wrap"><svg class="programiz-icon progress-list__single__icon"> <use xlink:href="/sites/all/themes/programiz/assets/feather-sprite.svg#check-small"> </use> </svg> </span>Python Variables</a></li>
+				<li><a href="/python-programming/variables-datatypes" title="Python datatypes"><span class="progress-list__single__icon-wrap"><svg class="programiz-icon progress-list__single__icon"> <use xlink:href="/sites/all/themes/programiz/assets/feather-sprite.svg#check-small"> </use> </svg> </span>Python Datatypes</a></li>
+				<li><a href="/python-programming/type-conversion-and-casting" title="Python Type Conversion and Type Casting"><span class="progress-list__single__icon-wrap"><svg class="programiz-icon progress-list__single__icon"> <use xlink:href="/sites/all/themes/programiz/assets/feather-sprite.svg#check-small"> </use> </svg> </span>Python Type Conversion</a></li>
+				<li><a href="/python-programming/input-output-import" title="Python I/O and import"><span class="progress-list__single__icon-wrap"><svg class="programiz-icon progress-list__single__icon"> <use xlink:href="/sites/all/themes/programiz/assets/feather-sprite.svg#check-small"> </use> </svg> </span>Python I/O and Import</a></li>
+				<li><a href="/python-programming/operators" title="Python operators"><span class="progress-list__single__icon-wrap"><svg class="programiz-icon progress-list__single__icon"> <use xlink:href="/sites/all/themes/programiz/assets/feather-sprite.svg#check-small"> </use> </svg> </span>Python Operators</a></li>
+				<li><a href="/python-programming/namespace" title="Python Programming Namespace"><span class="progress-list__single__icon-wrap"><svg class="programiz-icon progress-list__single__icon"> <use xlink:href="/sites/all/themes/programiz/assets/feather-sprite.svg#check-small"> </use> </svg> </span>Python Namespace</a></li>
+			</ul>
+		</li>
+		<li>
+			<h3>Python Flow Control</h3>
+
+			<ul>
+				<li><a href="/python-programming/if-elif-else" title="Python if, else and elif"><span class="progress-list__single__icon-wrap"><svg class="programiz-icon progress-list__single__icon"> <use xlink:href="/sites/all/themes/programiz/assets/feather-sprite.svg#check-small"> </use> </svg> </span>Python if...else</a></li>
+				<li><a href="/python-programming/for-loop" title="Python for Loop"><span class="progress-list__single__icon-wrap"><svg class="programiz-icon progress-list__single__icon"> <use xlink:href="/sites/all/themes/programiz/assets/feather-sprite.svg#check-small"> </use> </svg> </span>Python for Loop</a></li>
+				<li><a href="/python-programming/while-loop" title="Python while Loop"><span class="progress-list__single__icon-wrap"><svg class="programiz-icon progress-list__single__icon"> <use xlink:href="/sites/all/themes/programiz/assets/feather-sprite.svg#check-small"> </use> </svg> </span>Python while Loop</a></li>
+				<li><a href="/python-programming/break-continue" title="Python break and continue"><span class="progress-list__single__icon-wrap"><svg class="programiz-icon progress-list__single__icon"> <use xlink:href="/sites/all/themes/programiz/assets/feather-sprite.svg#check-small"> </use> </svg> </span>Python break and continue</a></li>
+				<li><a href="/python-programming/pass-statement" title="Python Pass Statement"><span class="progress-list__single__icon-wrap"><svg class="programiz-icon progress-list__single__icon"> <use xlink:href="/sites/all/themes/programiz/assets/feather-sprite.svg#check-small"> </use> </svg> </span>Python Pass</a></li>
+			</ul>
+		</li>
+		<li>
+			<h3>Python Functions</h3>
+
+			<ul>
+				<li><a href="/python-programming/function" title="Functions in Python Programming"><span class="progress-list__single__icon-wrap"><svg class="programiz-icon progress-list__single__icon"> <use xlink:href="/sites/all/themes/programiz/assets/feather-sprite.svg#check-small"> </use> </svg> </span>Python Function</a></li>
+				<li><a href="/python-programming/function-argument" title="Function Argument in Python"><span class="progress-list__single__icon-wrap"><svg class="programiz-icon progress-list__single__icon"> <use xlink:href="/sites/all/themes/programiz/assets/feather-sprite.svg#check-small"> </use> </svg> </span>Function Argument</a></li>
+				<li><a href="/python-programming/recursion" title="Recursive Function in Python"><span class="progress-list__single__icon-wrap"><svg class="programiz-icon progress-list__single__icon"> <use xlink:href="/sites/all/themes/programiz/assets/feather-sprite.svg#check-small"> </use> </svg> </span>Python Recursion</a></li>
+				<li><a href="/python-programming/anonymous-function" title="Anonymous Function in Python"><span class="progress-list__single__icon-wrap"><svg class="programiz-icon progress-list__single__icon"> <use xlink:href="/sites/all/themes/programiz/assets/feather-sprite.svg#check-small"> </use> </svg> </span>Anonymous Function</a></li>
+				<li><a href="/python-programming/global-local-nonlocal-variables" title="Global, Local and Nonlocal Variables"><span class="progress-list__single__icon-wrap"><svg class="programiz-icon progress-list__single__icon"> <use xlink:href="/sites/all/themes/programiz/assets/feather-sprite.svg#check-small"> </use> </svg> </span>Global, Local and Nonlocal</a></li>
+				<li><a href="/python-programming/global-keyword" title="Python Global Keyword"><span class="progress-list__single__icon-wrap"><svg class="programiz-icon progress-list__single__icon"> <use xlink:href="/sites/all/themes/programiz/assets/feather-sprite.svg#check-small"> </use> </svg> </span>Python Global Keyword</a></li>
+				<li><a href="/python-programming/modules" title="Modules in Python Programming"><span class="progress-list__single__icon-wrap"><svg class="programiz-icon progress-list__single__icon"> <use xlink:href="/sites/all/themes/programiz/assets/feather-sprite.svg#check-small"> </use> </svg> </span>Python Modules</a></li>
+				<li><a href="/python-programming/package" title="Package in Python Programming"><span class="progress-list__single__icon-wrap"><svg class="programiz-icon progress-list__single__icon"> <use xlink:href="/sites/all/themes/programiz/assets/feather-sprite.svg#check-small"> </use> </svg> </span>Python Package</a></li>
+			</ul>
+		</li>
+		<li>
+			<h3>Python Datatypes</h3>
+
+			<ul>
+				<li><a href="/python-programming/numbers" title="Numbers in Python Programming"><span class="progress-list__single__icon-wrap"><svg class="programiz-icon progress-list__single__icon"> <use xlink:href="/sites/all/themes/programiz/assets/feather-sprite.svg#check-small"> </use> </svg> </span>Python Numbers</a></li>
+				<li><a href="/python-programming/list" title="List in Python Programming"><span class="progress-list__single__icon-wrap"><svg class="programiz-icon progress-list__single__icon"> <use xlink:href="/sites/all/themes/programiz/assets/feather-sprite.svg#check-small"> </use> </svg> </span>Python List</a></li>
+				<li><a href="/python-programming/tuple" title="Tuple in Python Programming"><span class="progress-list__single__icon-wrap"><svg class="programiz-icon progress-list__single__icon"> <use xlink:href="/sites/all/themes/programiz/assets/feather-sprite.svg#check-small"> </use> </svg> </span>Python Tuple</a></li>
+				<li><a href="/python-programming/string" title="String in Python Programming"><span class="progress-list__single__icon-wrap"><svg class="programiz-icon progress-list__single__icon"> <use xlink:href="/sites/all/themes/programiz/assets/feather-sprite.svg#check-small"> </use> </svg> </span>Python String</a></li>
+				<li><a href="/python-programming/set" title="Set in Python Programming"><span class="progress-list__single__icon-wrap"><svg class="programiz-icon progress-list__single__icon"> <use xlink:href="/sites/all/themes/programiz/assets/feather-sprite.svg#check-small"> </use> </svg> </span>Python Set</a></li>
+				<li><a href="/python-programming/dictionary" title="Dictionary in Python Programming"><span class="progress-list__single__icon-wrap"><svg class="programiz-icon progress-list__single__icon"> <use xlink:href="/sites/all/themes/programiz/assets/feather-sprite.svg#check-small"> </use> </svg> </span>Python Dictionary</a></li>
+			</ul>
+		</li>
+		<li>
+			<h3>Python Files</h3>
+
+			<ul>
+				<li><a href="/python-programming/file-operation" title="Python file operation"><span class="progress-list__single__icon-wrap"><svg class="programiz-icon progress-list__single__icon"> <use xlink:href="/sites/all/themes/programiz/assets/feather-sprite.svg#check-small"> </use> </svg> </span>Python File Operation</a></li>
+				<li><a href="/python-programming/directory" title="Python directory"><span class="progress-list__single__icon-wrap"><svg class="programiz-icon progress-list__single__icon"> <use xlink:href="/sites/all/themes/programiz/assets/feather-sprite.svg#check-small"> </use> </svg> </span>Python Directory</a></li>
+				<li><a href="/python-programming/exceptions" title="Python exception"><span class="progress-list__single__icon-wrap"><svg class="programiz-icon progress-list__single__icon"> <use xlink:href="/sites/all/themes/programiz/assets/feather-sprite.svg#check-small"> </use> </svg> </span>Python Exception</a></li>
+				<li><a href="/python-programming/exception-handling" title="Python exception handling"><span class="progress-list__single__icon-wrap"><svg class="programiz-icon progress-list__single__icon"> <use xlink:href="/sites/all/themes/programiz/assets/feather-sprite.svg#check-small"> </use> </svg> </span>Exception Handling</a></li>
+				<li><a href="/python-programming/user-defined-exception" title="Python user-defined exception"><span class="progress-list__single__icon-wrap"><svg class="programiz-icon progress-list__single__icon"> <use xlink:href="/sites/all/themes/programiz/assets/feather-sprite.svg#check-small"> </use> </svg> </span>User-defined Exception</a></li>
+			</ul>
+		</li>
+		<li>
+			<h3>Python Object &amp; Class</h3>
+
+			<ul>
+				<li><a href="/python-programming/object-oriented-programming" title="Python Object Oriented Programming"><span class="progress-list__single__icon-wrap"><svg class="programiz-icon progress-list__single__icon"> <use xlink:href="/sites/all/themes/programiz/assets/feather-sprite.svg#check-small"> </use> </svg> </span>Python OOP</a></li>
+				<li><a href="/python-programming/class" title="Python Programming Class"><span class="progress-list__single__icon-wrap"><svg class="programiz-icon progress-list__single__icon"> <use xlink:href="/sites/all/themes/programiz/assets/feather-sprite.svg#check-small"> </use> </svg> </span>Python Class</a></li>
+				<li><a href="/python-programming/inheritance" title="Python Programming Inheritance"><span class="progress-list__single__icon-wrap"><svg class="programiz-icon progress-list__single__icon"> <use xlink:href="/sites/all/themes/programiz/assets/feather-sprite.svg#check-small"> </use> </svg> </span>Python Inheritance</a></li>
+				<li><a href="/python-programming/multiple-inheritance" title="Multiple Inheritance in Python"><span class="progress-list__single__icon-wrap"><svg class="programiz-icon progress-list__single__icon"> <use xlink:href="/sites/all/themes/programiz/assets/feather-sprite.svg#check-small"> </use> </svg> </span>Multiple Inheritance</a></li>
+				<li><a href="/python-programming/operator-overloading" title="Python Operator Overloading"><span class="progress-list__single__icon-wrap"><svg class="programiz-icon progress-list__single__icon"> <use xlink:href="/sites/all/themes/programiz/assets/feather-sprite.svg#check-small"> </use> </svg> </span>Operator Overloading</a></li>
+			</ul>
+		</li>
+		<li>
+			<h3>Python Advanced Topics</h3>
+
+			<ul>
+				<li><a href="/python-programming/iterator" title="Python iterators"><span class="progress-list__single__icon-wrap"><svg class="programiz-icon progress-list__single__icon"> <use xlink:href="/sites/all/themes/programiz/assets/feather-sprite.svg#check-small"> </use> </svg> </span>Python Iterator</a></li>
+				<li><a href="/python-programming/generator" title="Python Generator"><span class="progress-list__single__icon-wrap"><svg class="programiz-icon progress-list__single__icon"> <use xlink:href="/sites/all/themes/programiz/assets/feather-sprite.svg#check-small"> </use> </svg> </span>Python Generator</a></li>
+				<li><a href="/python-programming/closure" title="Python closure"><span class="progress-list__single__icon-wrap"><svg class="programiz-icon progress-list__single__icon"> <use xlink:href="/sites/all/themes/programiz/assets/feather-sprite.svg#check-small"> </use> </svg> </span>Python Closure</a></li>
+				<li><a href="/python-programming/decorator" title="Decorators in Python"><span class="progress-list__single__icon-wrap"><svg class="programiz-icon progress-list__single__icon"> <use xlink:href="/sites/all/themes/programiz/assets/feather-sprite.svg#check-small"> </use> </svg> </span>Python Decorators</a></li>
+				<li><a href="/python-programming/property" title="Python programming property"><span class="progress-list__single__icon-wrap"><svg class="programiz-icon progress-list__single__icon"> <use xlink:href="/sites/all/themes/programiz/assets/feather-sprite.svg#check-small"> </use> </svg> </span>Python Property</a></li>
+				<li><a href="/python-programming/regex" title="Python regex"><span class="progress-list__single__icon-wrap"><svg class="programiz-icon progress-list__single__icon"> <use xlink:href="/sites/all/themes/programiz/assets/feather-sprite.svg#check-small"> </use> </svg> </span>Python RegEx</a></li>
+				<li><a href="/python-programming/examples" title="Source code of Python"><span class="progress-list__single__icon-wrap"><svg class="programiz-icon progress-list__single__icon"> <use xlink:href="/sites/all/themes/programiz/assets/feather-sprite.svg#check-small"> </use> </svg> </span>Python Examples</a></li>
+			</ul>
+		</li>
+		<li>
+			<h3>Python Date and time</h3>
+
+			<ul>
+				<li><a href="/python-programming/datetime" title="Python datetime module"><span class="progress-list__single__icon-wrap"><svg class="programiz-icon progress-list__single__icon"> <use xlink:href="/sites/all/themes/programiz/assets/feather-sprite.svg#check-small"> </use> </svg> </span>Python datetime Module</a></li>
+				<li><a href="/python-programming/datetime/strftime" title="Get string from datetime"><span class="progress-list__single__icon-wrap"><svg class="programiz-icon progress-list__single__icon"> <use xlink:href="/sites/all/themes/programiz/assets/feather-sprite.svg#check-small"> </use> </svg> </span>Python datetime.strftime()</a></li>
+				<li><a href="/python-programming/datetime/strptime" title="Get datetime from string"><span class="progress-list__single__icon-wrap"><svg class="programiz-icon progress-list__single__icon"> <use xlink:href="/sites/all/themes/programiz/assets/feather-sprite.svg#check-small"> </use> </svg> </span>Python datetime.strptime()</a></li>
+				<li><a href="/python-programming/datetime/current-datetime" title="Python get current date and time"><span class="progress-list__single__icon-wrap"><svg class="programiz-icon progress-list__single__icon"> <use xlink:href="/sites/all/themes/programiz/assets/feather-sprite.svg#check-small"> </use> </svg> </span>Current date &amp; time</a></li>
+				<li><a href="/python-programming/datetime/current-time" title="Python get current time"><span class="progress-list__single__icon-wrap"><svg class="programiz-icon progress-list__single__icon"> <use xlink:href="/sites/all/themes/programiz/assets/feather-sprite.svg#check-small"> </use> </svg> </span>Get current time</a></li>
+				<li><a href="/python-programming/datetime/timestamp-datetime" title="Python timestamp to datetime and datetime to timestamp"><span class="progress-list__single__icon-wrap"><svg class="programiz-icon progress-list__single__icon"> <use xlink:href="/sites/all/themes/programiz/assets/feather-sprite.svg#check-small"> </use> </svg> </span>Timestamp to datetime</a></li>
+				<li><a href="/python-programming/time" title="Python time"><span class="progress-list__single__icon-wrap"><svg class="programiz-icon progress-list__single__icon"> <use xlink:href="/sites/all/themes/programiz/assets/feather-sprite.svg#check-small"> </use> </svg> </span>Python time Module</a></li>
+				<li><a href="/python-programming/time/sleep" title="Python sleep() function to wait"><span class="progress-list__single__icon-wrap"><svg class="programiz-icon progress-list__single__icon"> <use xlink:href="/sites/all/themes/programiz/assets/feather-sprite.svg#check-small"> </use> </svg> </span>Python time.sleep()</a></li>
+			</ul>
+		</li>
+	</ul>
+</div>
+
+    
+    
+    
+    
+    <style>
+#div-gpt-ad-Programizcom36792 {display:none; }
+@media(min-width: 992px) { #div-gpt-ad-Programizcom36792 {display: block;} }
+</style>
+
+<div id='div-gpt-ad-Programizcom36792' class="pub-ad" style='height:250px; width:300px; margin: 40px 0;'>
+<script>
+googletag.cmd.push(function() { googletag.display('div-gpt-ad-Programizcom36792'); });
+</script>
+</div>
+    
+    
+    
+    
+    <div class="card-alt card-alt--even-spaced mb-10x">
+    <div class="subscribe ml-subscribe-form ml-subscribe-form-1819301" id="mlb2-1819301">
+        <div class="card-alt__form-title">Join our newsletter for the latest updates.</div>
+
+        <div class="ml-vertical-align-center">
+            <div class="subscribe-form ml-block-success" style="display:none">
+                <div class="form-section">
+                    <p>You have successfully subscribed to Python newsletter.</p>
+                </div>
+            </div>
+
+            <form action="//app.mailerlite.com/webforms/submit/s8v2x9" class="ml-block-form" data-code="s8v2x9"
+                method="POST" target="_blank">
+                <div class="input-group"><input class="form-control input-group__control" name="fields[email]"
+                        placeholder="Enter Email Address*" type="text" value="" /> <input name="ml-submit" type="hidden"
+                        value="1" /><button class="primary input-group__action btn btn--primary btn--clear"
+                        type="submit">Join</button></div>
+            </form>
+            <script>
+                function ml_webform_success_1819301() {
+                    jQuery('.ml-subscribe-form-1819301 .ml-block-success').show();
+                    jQuery('.ml-subscribe-form-1819301 .ml-block-form').hide();
+                };
+            </script>
+        </div>
+    </div>
+    <script type="text/javascript" src="//static.mailerlite.com/js/w/webforms.js?v25"></script>
+</div>
+    
+    
+    
+    
+    <style>
+#div-gpt-ad-Programizcom36787 {display:none; }
+@media(min-width: 992px) { #div-gpt-ad-Programizcom36787 {display: block; max-width: 300px; margin: 40px auto;} }
+</style>
+
+<div class="pub-ad">
+<div id="div-gpt-ad-Programizcom36787"  class="sticky-sidebar-advertisement">
+<script>
+googletag.cmd.push(function() { googletag.display('div-gpt-ad-Programizcom36787'); });
+</script>
+</div>
+</div>
+                </div>
+          
+          <div class="right-bar">
+
+                          <div class='tutorial-toc'><div class='tutorial-toc__inner'><button class='btn btn--secondary align-items-center btn--toc-close'>
+      <svg class='programiz-icon programiz-icon--small programiz-icon--reversed'>
+        <use xlink:href='/sites/all/themes/programiz/assets/feather-sprite.svg#log-in'/>
+      </svg>
+      </button><h3 class='tutorial-toc__title'>Table of Contents
+      <button class='btn btn--clear align-items-center'>
+      <svg class='programiz-icon'>
+        <use xlink:href='/sites/all/themes/programiz/assets/feather-sprite.svg#x'/>
+      </svg>
+      </button></h3><div class='tutorial-toc__links'><ul>
+	<li><a href="#what">What are if...else statement in Python?</a>
+		<ul>
+			<li><a href="#if-syntax">Python if Statement Syntax</a></li>
+			<li><a href="#if-flowchart">Python if Statement Flowchart</a></li>
+			<li><a href="#example-if">Example: Python if Statement</a></li>
+		</ul>
+	</li>
+	<li><a href="#if-else">Python if...else Statement</a>
+		<ul>
+			<li><a href="#else-syntax">Syntax of if...else</a></li>
+			<li><a href="#else-flowchart">Python if..else Flowchart</a></li>
+			<li><a href="#example-else">Example of if...else</a></li>
+		</ul>
+	</li>
+	<li><a href="#elif">Python if...elif...else Statement</a>
+		<ul>
+			<li><a href="#elif-syntax">Syntax of if...elif...else</a></li>
+			<li><a href="#elif-flowchart">Flowchart of if...elif...else</a></li>
+			<li><a href="#example-elif">Example of if...elif...else</a></li>
+		</ul>
+	</li>
+	<li><a href="#nested">Python Nested if statements</a></li>
+</ul>
+</div></div></div>            
+
+                            
+    
+    
+    
+    <style>
+#carbonads {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+  Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", Helvetica, Arial,
+  sans-serif;
+  --width: 728px;
+  --font-size: 22px;
+}
+
+#carbonads {
+  display: block;
+  overflow: hidden;
+  max-width: var(--width);
+  position: relative;
+  background-color: hsl(0, 0%, 99%);
+  border: solid 1px #eee;
+  font-size: var(--font-size);
+  box-sizing: border-box;
+  margin: 0 0 24px 0;
+}
+
+.detail #carbonads {
+  margin-top: 12px;
+}
+
+#carbonads a {
+  color: inherit;
+  text-decoration: none;
+}
+
+#carbonads a:hover {
+  color: inherit;
+}
+
+.carbon-wrap {
+  display: flex;
+  align-items: center;
+}
+
+carbon-img {
+  display: block;
+  float: left;
+  margin: 0;
+  max-width: var(--width);
+  line-height: 1;
+}
+
+.carbon-img img {
+  display: block;
+  margin: 0;
+  height: 90px;
+  width: auto;
+}
+
+.carbon-text {
+  display: block;
+  float: left;
+  padding: 0 1em;
+  line-height: 1.35;
+  max-width: calc(100% - 130px - 2em);
+  text-align: left;
+}
+
+.carbon-poweredby {
+  display: block;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  padding: 6px 10px;
+  background: repeating-linear-gradient(
+                  -45deg,
+                  transparent,
+                  transparent 5px,
+                  hsla(0, 0%, 0%, 0.025) 5px,
+                  hsla(0, 0%, 0%, 0.025) 10px
+  )
+  hsla(203, 11%, 95%, 0.8);
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  font-weight: 600;
+  font-size: 8px;
+  border-top-left-radius: 4px;
+  line-height: 1;
+}
+
+@media only screen and (min-width: 320px) and (max-width: 759px) {
+  .carbon-text {
+    font-size: 14px;
+  }
+}
+</style>
+<div id="carbon-block"></div>
+<script>
+try {
+  fetch(new Request("https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js", { method: 'HEAD', mode: 'no-cors' })).then(function(response) {
+    return true;
+  }).catch(function(e) {
+    var carbonScript = document.createElement("script");
+    carbonScript.src = "//cdn.carbonads.com/carbon.js?serve=CKYDL27L&placement=wwwprogramizcom";
+    carbonScript.id = "_carbonads_js";
+    document.getElementById("carbon-block").appendChild(carbonScript);
+  });
+} catch (error) {
+  console.log(error);
+}
+</script>
+    
+    
+    
+    
+    <div class="breadcumb mt-0x"><div class="breadcumb__node"><a class="breadcumb__link" href="/python-programming"><svg class="programiz-icon programiz-icon--small breadcumb__link__icon"><use xlink:href="/sites/all/themes/programiz/assets/feather-sprite.svg#home" /></svg><span class="breadcumb__label">Python Programming</span></a></div><span class="breadcumb__link"><span class="breadcumb__label">Python if...else Statement</span></span></div>
+                
+            <div class="editor-contents">
+                              <h1>Python if...else Statement</h1>
+              
+              
+                              <h4>In this article, you will learn to create decisions in a Python program using different forms of if..else statement.</h4>
+              
+                                
+    
+    
+    
+    <style>
+#div-gpt-ad-Programizcom36791 {display:none; }
+#div-gpt-ad-Programizcom36795 {display: block;}
+@media(min-width: 992px) { #div-gpt-ad-Programizcom36791 {display: block;} #div-gpt-ad-Programizcom36795 {display: none;}}
+</style>
+
+<div id="div-gpt-ad-Programizcom36791" class="pub-ad" style="height:90px; width:728px; margin: 42px 0;">
+<script>
+googletag.cmd.push(function() { googletag.display('div-gpt-ad-Programizcom36791'); });
+</script>
+</div>
+
+<div id="div-gpt-ad-Programizcom36795" class="pub-ad" style="height:250px; width:300px; margin: 42px 0;">
+<script>
+googletag.cmd.push(function() { googletag.display('div-gpt-ad-Programizcom36795'); });
+</script>
+</div>
+                  
+              
+                                
+    
+    
+    
+    <div id="node-64" class="node node-python clearfix" about="/python-programming/if-elif-else" typeof="sioc:Item foaf:Document">
+
+  
+      <span property="dc:title" content="Python if...else Statement" class="rdf-meta element-hidden"></span>
+  
+  <div class="content">
+      <h2 id="what">What is if...else statement in Python?</h2>
+
+<p>Decision making is required when we want to execute a code only if a certain condition is satisfied.</p>
+
+<p>The <code>if&hellip;elif&hellip;else</code> statement is used in Python for decision making.</p>
+
+<h3 id="if-syntax">Python if Statement Syntax</h3>
+
+<pre>
+if test expression:
+    statement(s)</pre>
+
+<p>Here, the program evaluates the <code>test expression</code> and will execute statement(s) only if the test expression is <code>True</code>.</p>
+
+<p>If the test expression is <code>False</code>, the statement(s) is not executed.</p>
+
+<p>In Python, the body of the <code>if</code> statement is indicated by the indentation. The body starts with an indentation and the first unindented line marks the end.</p>
+
+<p>Python interprets non-zero values as <code>True</code>. <code>None</code> and <code>0</code> are interpreted as <code>False</code>.</p>
+
+<h3 id="if-flowchart">Python if Statement Flowchart</h3>
+
+<figure><img alt="Flowchart of if statement in Python programming" src="//cdn.programiz.com/sites/tutorial2program/files/Python_if_statement.jpg" title="If Statement Flowchart" width="227" />
+	<figcaption>Flowchart of if statement in Python programming</figcaption>
+</figure>
+
+<h3 id="example-if">Example: Python if Statement</h3>
+
+<pre class="python-exec">
+<code># If the number is positive, we print an appropriate message
+
+num = 3
+if num &gt; 0:
+    print(num, &quot;is a positive number.&quot;)
+print(&quot;This is always printed.&quot;)
+
+num = -1
+if num &gt; 0:
+    print(num, &quot;is a positive number.&quot;)
+print(&quot;This is also always printed.&quot;)</code></pre>
+
+<p>When you run the program, the output will be:</p>
+
+<pre>
+<samp>3 is a positive number
+This is always printed
+This is also always printed.</samp></pre>
+
+<p><div  id="block-inject-1" class="block-inject block-inject-1">
+    
+    
+    
+    <style>
+#div-gpt-ad-Programizcom37046 {display:none; }
+#div-gpt-ad-Programizcom36796 {display: block;}
+@media(min-width: 992px) { #div-gpt-ad-Programizcom37046 {display: block;} #div-gpt-ad-Programizcom36796 {display: none;}}
+</style>
+
+<div id='div-gpt-ad-Programizcom37046' class="pub-ad" style="margin: 42px 0;">
+<script>
+googletag.cmd.push(function() { googletag.display('div-gpt-ad-Programizcom37046'); });
+</script>
+</div>
+
+<div id='div-gpt-ad-Programizcom36796' class="pub-ad" style="margin: 42px 0;">
+<script>
+googletag.cmd.push(function() { googletag.display('div-gpt-ad-Programizcom36796'); });
+</script>
+</div>
+    </div><div class="clearfix"></div><p>In the above example, <code>num &gt; 0</code> is the test expression.</p>
+
+<p>The body of <code>if</code> is executed only if this evaluates to <code>True</code>.</p>
+
+<p>When the variable <var>num</var> is equal to 3, test expression is true and statements inside the body of <code>if</code> are executed.</p>
+
+<p>If the variable <var>num</var> is equal to -1, test expression is false and statements inside the body of <code>if</code> are skipped.</p>
+
+<p>The <code>print()</code> statement falls outside of the <code>if</code> block (unindented). Hence, it is executed regardless of the test expression.</p>
+
+<hr />
+<h2 id="if-else">Python if...else Statement</h2>
+
+<h3 id="else-syntax">Syntax of if...else</h3>
+
+<pre>
+if test expression:
+    Body of if
+else:
+    Body of else</pre>
+
+<p>The <code>if..else</code> statement evaluates <code>test expression</code> and will execute the body of <code>if</code> only when the test condition is <code>True</code>.</p>
+
+<p>If the condition is <code>False</code>, the body of <code>else</code> is executed. Indentation is used to separate the blocks.</p>
+
+<h3 id="else-flowchart">Python if..else Flowchart</h3>
+
+<figure><img alt="Flowchart of if...else statement in Python Programming" src="//cdn.programiz.com/sites/tutorial2program/files/Python_if_else_statement.jpg" title="if...else statement flowchart" width="279" />
+	<figcaption>Flowchart of if...else statement in Python</figcaption>
+</figure>
+
+<h3 id="example-else">Example of if...else</h3>
+
+<pre class="python-exec">
+<code># Program checks if the number is positive or negative
+# And displays an appropriate message
+
+num = 3
+
+# Try these two variations as well. 
+# num = -5
+# num = 0
+
+if num &gt;= 0:
+    print(&quot;Positive or Zero&quot;)
+else:
+    print(&quot;Negative number&quot;)</code></pre>
+
+<p><strong>Output</strong></p>
+
+<pre>
+<samp>Positive or Zero</samp></pre>
+
+<p>In the above example, when <var>num</var> is equal to 3, the test expression is true and the body of <code>if</code> is executed and the <code>body</code> of else is skipped.</p>
+
+<p>If <var>num</var> is equal to -5, the test expression is false and the body of <code>else</code> is executed and the body of <code>if</code> is skipped.</p>
+
+<p>If <var>num</var> is equal to 0, the test expression is true and body of <code>if</code> is executed and <code>body</code> of else is skipped.</p>
+
+<hr />
+<h2 id="elif">Python if...elif...else Statement</h2>
+
+<h3 id="elif-syntax">Syntax of if...elif...else</h3>
+
+<pre>
+if test expression:
+    Body of if
+elif test expression:
+    Body of elif
+else: 
+    Body of else</pre>
+
+<p>The <code>elif</code> is short for else if. It allows us to check for multiple expressions.</p>
+
+<p>If the condition for <code>if</code> is <code>False</code>, it checks the condition of the next <code>elif</code> block and so on.</p>
+
+<p>If all the conditions are <code>False</code>, the body of else is executed.</p>
+
+<p>Only one block among the several <code>if...elif...else</code> blocks is executed according to the condition.</p>
+
+<p>The <code>if</code> block can have only one <code>else</code> block. But it can have multiple <code>elif</code> blocks.</p>
+
+<h3 id="elif-flowchart">Flowchart of if...elif...else</h3>
+
+<figure><img alt="Flowchart of if...elif....else in Python programming" src="//cdn.programiz.com/sites/tutorial2program/files/Python_if_elif_else_statement.jpg" title="if...elif...else statement flowchart" width="412" />
+	<figcaption>Flowchart of if...elif....else statement in Python</figcaption>
+</figure>
+
+<h3 id="example-elif">Example of if...elif...else</h3>
+
+<pre class="python-exec">
+<code>&#39;&#39;&#39;In this program, 
+we check if the number is positive or
+negative or zero and 
+display an appropriate message&#39;&#39;&#39;
+
+num = 3.4
+
+# Try these two variations as well:
+# num = 0
+# num = -4.5
+
+if num &gt; 0:
+    print(&quot;Positive number&quot;)
+elif num == 0:
+    print(&quot;Zero&quot;)
+else:
+    print(&quot;Negative number&quot;)</code></pre>
+
+<p>When variable <var>num</var> is positive, <samp>Positive number</samp> is printed.</p>
+
+<p>If <var>num</var> is equal to 0, <samp>Zero</samp> is printed.</p>
+
+<p>If <var>num</var> is negative, <samp>Negative number</samp> is printed.</p>
+
+<hr />
+<h2 id="nested">Python Nested if statements</h2>
+
+<p>We can have a <code>if...elif...else</code> statement inside another <code>if...elif...else</code> statement. This is called nesting in computer programming.</p>
+
+<p>Any number of these statements can be nested inside one another. Indentation is the only way to figure out the level of nesting. They can get confusing, so they must be avoided unless necessary.</p>
+
+<h3>Python Nested if Example</h3>
+
+<pre class="python-exec">
+<code>&#39;&#39;&#39;In this program, we input a number
+check if the number is positive or
+negative or zero and display
+an appropriate message
+This time we use nested if statement&#39;&#39;&#39;
+
+num = float(input(&quot;Enter a number: &quot;))
+if num &gt;= 0:
+    if num == 0:
+        print(&quot;Zero&quot;)
+    else:
+        print(&quot;Positive number&quot;)
+else:
+    print(&quot;Negative number&quot;)</code></pre>
+
+<p><strong>Output 1</strong></p>
+
+<pre>
+<samp>Enter a number: 5
+Positive number</samp></pre>
+
+<p><strong>Output 2</strong></p>
+
+<pre>
+<samp>Enter a number: -1
+Negative number</samp></pre>
+
+<p><strong>Output 3</strong></p>
+
+<pre>
+<samp>Enter a number: 0
+Zero</samp></pre>
+  </div>
+
+  
+  
+</div>
+
+                              </div>
+
+                            
+    
+    
+    
+    
+
+<div class="pagination-area">
+
+    
+        <div class="pagination-area__btn pagination-area__btn--prev">
+            <a href="/python-programming/namespace" title="Python Namespace" class="btn pagination-btn d-flex align-items-center justify-content-end">
+                <div class="btn__labels text-right">
+                    <div class="btn__sub-label">Previous Tutorial:</div>
+                    <div class="btn__label">Python Namespace</div>
+                </div>
+            </a></div>
+    
+    
+        <div class="pagination-area__btn pagination-area__btn--next">
+
+            <a href="/python-programming/for-loop" title="Python for Loop" class="btn btn--primary pagination-btn d-flex align-items-center justify-content-end">
+                <div class="btn__labels text-right">
+                    <div class="btn__sub-label">Next Tutorial:</div>
+                    <div class="btn__label">Python for Loop</div>
+                </div>
+                <svg class="programiz-icon">
+                    <use xlink:href="/sites/all/themes/programiz/assets/feather-sprite.svg#arrow-right" />
+                </svg>
+            </a>
+        </div>
+    </div>
+    
+    
+    
+    
+    <div class="social-area">
+    <div class="social-area__col social-area__col-1"><label class="social-area__label">Share on: </label>
+        <div class="social-icon">
+            <a class="social-icon__link" href="https://www.facebook.com/sharer/sharer.php?u=https://www.programiz.com/python-programming/if-elif-else"><svg class="programiz-icon programiz-icon--smallest"><use xlink:href="/sites/all/themes/programiz/assets/feather-sprite.svg#facebook"></use></svg></a>            <a class="social-icon__link" href="https://twitter.com/intent/tweet?text=Check this amazing article: Python if...else Statement&via=programiz&url=https://www.programiz.com/python-programming/if-elif-else"><svg class="programiz-icon programiz-icon--smallest"><use xlink:href="/sites/all/themes/programiz/assets/feather-sprite.svg#twitter"></use></svg></a>        </div>
+    </div>
+
+    <div class="social-area__col social-area__col-2"><label class="social-area__label">Was this article helpful? </label>
+
+        <div class="social-icon" data-nid="64"><button class="social-icon__link social-icon__link--negetive"><svg class="programiz-icon programiz-icon--smallest">
+                    <use xlink:href="/sites/all/themes/programiz/assets/feather-sprite.svg#thumbs-down"></use>
+                </svg></button><button class="social-icon__link social-icon__link--positive"><svg class="programiz-icon programiz-icon--smallest">
+                    <use xlink:href="/sites/all/themes/programiz/assets/feather-sprite.svg#thumbs-up"></use>
+                </svg></button></div>
+    </div>
+
+    <div class="page-feedback-form" style="display: none;">
+        <form class="webform-client-form webform-client-form-1680" action="/python-programming/if-elif-else" method="post" id="webform-client-form-1680" accept-charset="UTF-8"><div><div  class="form-item webform-component webform-component-markup webform-component--page-feedback-header">
+ <p class="font-weight-600" style="font-size: 18px;">Sorry about that</p>
+<label class="social-area__label" style="margin-top: 20px; font-size: 14px;">How can we improve it?</label>
+</div>
+<div class="row"><div class="col-md-12"><div class="form"><div  class="form-item webform-component webform-component-textarea webform-component--dislike-feedback">
+  <label class="element-invisible" for="edit-submitted-dislike-feedback">Feedback <span class="form-required" title="This field is required.">*</span></label>
+ <div class="form-textarea-wrapper resizable"><textarea required="required" placeholder="Enter your message..." class="form__control form__control--textarea form-textarea required" id="edit-submitted-dislike-feedback" name="submitted[dislike_feedback]" cols="60" rows="5"></textarea></div>
+</div>
+</div></div></div><input type="hidden" name="details[sid]" />
+<input type="hidden" name="details[page_num]" value="1" />
+<input type="hidden" name="details[page_count]" value="1" />
+<input type="hidden" name="details[finished]" value="0" />
+<input type="hidden" name="form_build_id" value="form-gGEd6oCbUtYx-Eqs_skw-pkRYPDY2ExSZSmNhcaszLI" />
+<input type="hidden" name="form_id" value="webform_client_form_1680" />
+<div class="captcha"><input type="hidden" name="captcha_sid" value="5027894" />
+<input type="hidden" name="captcha_token" value="1b15d2fbf975851b3debcf01a1f703b1" />
+<input type="hidden" name="captcha_response" value="Google no captcha" />
+<div class="g-recaptcha" data-sitekey="6LcpoEsUAAAAAP2oeouHeV70m85MUNlab8UrEqyL" data-theme="light" data-type="image"></div></div><div class="form-actions"><div class="row"><div class="col-md-12 d-flex justify-content-start"><input class="webform-submit button-primary btn btn--primary btn--large btn--block-sp form-submit" type="submit" id="edit-submit" name="op" value="Submit" /></div></div></div></div></form>    </div>
+</div>
+    
+    
+    
+    
+    <style>
+#div-gpt-ad-Programizcom36790 {display:none; }
+#div-gpt-ad-Programizcom36794 {display: block;}
+@media(min-width: 992px) { #div-gpt-ad-Programizcom36790 {display: block;} #div-gpt-ad-Programizcom36794 {display: none;}}
+</style>
+
+<div id='div-gpt-ad-Programizcom36790' style="margin: 36px 0;"  class="pub-ad">
+<script>
+googletag.cmd.push(function() { googletag.display('div-gpt-ad-Programizcom36790'); });
+</script>
+</div>
+
+<div id='div-gpt-ad-Programizcom36794' style="margin: 36px 0;" class="pub-ad">
+<script>
+googletag.cmd.push(function() { googletag.display('div-gpt-ad-Programizcom36794'); });
+</script>
+</div>
+    
+    
+    
+    
+    <style>
+    #div-gpt-ad-Programizcom37110, #div-gpt-ad-Programizcom37111 {display:none;}
+    @media(min-width: 1631px) { #div-gpt-ad-Programizcom37111 {display: block;} }
+    @media(min-width: 1911px) { #div-gpt-ad-Programizcom37110 {display: block;} #div-gpt-ad-Programizcom37111 {display: none;} }
+</style>
+
+<div id='PG_ad_r1'>	
+    <div id='div-gpt-ad-Programizcom37110' class="pub-ad">
+      <script>
+		  googletag.cmd.push(function() { googletag.display('div-gpt-ad-Programizcom37110'); });
+		</script>
+    </div>
+    
+    <div id='div-gpt-ad-Programizcom37111' class="pub-ad">
+      <script>
+		googletag.cmd.push(function() { googletag.display('div-gpt-ad-Programizcom37111'); });
+	  </script>
+    </div>
+</div>
+                
+          </div>
+        </div>
+      </div>
+      <hr />
+
+                
+    
+    
+    
+    <div class="view view-tutorials-related-articles view-id-tutorials_related_articles view-display-id-block above-bottom-recommended-articles view-dom-id-9fa723aba3cff905a823d57208be084e">
+        
+  
+  
+      <div class="view-content">
+      <div class="row"><div class="col-sm-12"><h3 class="grouped-card-title">Related Tutorials</h3></div><div class="col-md-6 col-lg-3"><a href="/python-programming/polymorphism"> <div class="card card--even-spaced card--examples card--examples--blue card--examples--1"><p class="card__title">Python Tutorial</p><p class="card__description">Polymorphism in Python</p></div></a></div><div class="col-md-6 col-lg-3"><a href="/python-programming/main-function"> <div class="card card--even-spaced card--examples card--examples--blue card--examples--2"><p class="card__title">Python Tutorial</p><p class="card__description">Python main function</p></div></a></div><div class="col-md-6 col-lg-3"><a href="/python-programming/guide"> <div class="card card--even-spaced card--examples card--examples--blue card--examples--3"><p class="card__title">Python Tutorial</p><p class="card__description">Python Programming</p></div></a></div><div class="col-md-6 col-lg-3"><a href="/python-programming/pip"> <div class="card card--even-spaced card--examples card--examples--blue card--examples--4"><p class="card__title">Python Tutorial</p><p class="card__description">Python pip</p></div></a></div></div></div>    </div>
+  
+  
+  
+  
+  
+  
+</div>
+              </div>
+  </div>
+
+      <footer class="footer">
+        
+    
+    
+    
+    <div class="container">
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="sp-footer-form d-block d-md-none subscribe ml-subscribe-form ml-subscribe-form-1718502" id="mlb2-1718502">
+                <div class="card card--even-spaced card--shadowed-up card--no-border">
+                    <div class="footer__form">
+                        <div class="footer__form__title">Join our newsletter for the latest updates.</div>
+
+                        <div class="ml-vertical-align-center">
+                            <div class="subscribe-form ml-block-success" style="display:none">
+                                <div class="form-section">
+                                    <p>You have successfully subscribed to our newsletter.</p>
+                                </div>
+                            </div>
+
+                            <form action="//app.mailerlite.com/webforms/submit/a4q9r9" class="ml-block-form" data-code="a4q9r9" method="POST" target="_blank">
+                                <div class="input-group"><input class="input-group__control" name="fields[email]" placeholder="Enter email address" type="text" /> <input name="ml-submit" type="hidden" value="1" /><button class="input-group__action btn btn--primary btn--clear" type="submit">Join</button></div>
+                            </form>
+                        </div>
+                        <script>
+                            function ml_webform_success_1718502() {
+                                jQuery('.ml-subscribe-form-1718502 .ml-block-success').show();
+                                jQuery('.ml-subscribe-form-1718502 .ml-block-form').hide();
+                            }
+                        </script>
+                    </div>
+                </div>
+            </div>
+            <script type="text/javascript" src="//static.mailerlite.com/js/w/webforms.min.js?v4a60e9ef938a7fa0240ac9ba567062cb"></script>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-xl-4 col-lg-5 col-md-6 d-none d-md-block">
+            <div class="footer__content"><object class="footer__logo" data="/sites/all/themes/programiz/assets/logo_white.svg" type="image/svg+xml"></object>
+
+                <div class="footer__form footer__form--pc subscribe ml-subscribe-form ml-subscribe-form-1718502" id="mlb2-1718502">
+                    <div class="footer__form__title">Join our newsletter for the latest updates.</div>
+
+                    <div class="ml-vertical-align-center">
+                        <div class="subscribe-form ml-block-success" style="display:none">
+                            <div class="form-section">
+                                <p>You have successfully subscribed to our newsletter.</p>
+                            </div>
+                        </div>
+
+                        <form action="//app.mailerlite.com/webforms/submit/a4q9r9" class="ml-block-form" data-code="a4q9r9" method="POST" target="_blank">
+                            <div class="input-group"><input class="input-group__control" name="fields[email]" placeholder="Enter email address" type="text" /> <input name="ml-submit" type="hidden" value="1" /><button class="input-group__action btn btn--primary btn--clear" type="submit">Join</button></div>
+                        </form>
+                    </div>
+                    <script>
+                        function ml_webform_success_1718502() {
+                            jQuery('.ml-subscribe-form-1718502 .ml-block-success').show();
+                            jQuery('.ml-subscribe-form-1718502 .ml-block-form').hide();
+                        }
+                    </script>
+                </div>
+
+                <div class="footer__vendor-btn">
+                    <div class="footer__vendor-btn__row"><a href="https://play.google.com/store/apps/details?id=com.programiz.learnpython&amp;referrer=utm_campaign%3Dprogramiz-footer%26utm_source%3Dprogramiz-website" title="Learn Python: Programiz on Play Store"><img class="app-download-btn app-download-btn--offset" src="//cdn.programiz.com/sites/all/themes/programiz/assets/playstore.svg" /> </a></div>
+
+                    <div class="footer__vendor-btn__row"><a href="https://apps.apple.com/app/apple-store/id1472188189?pt=120228772&amp;ct=programiz-footer&amp;mt=8" title="Learn Python: Programiz on App Store"><img class="app-download-btn" src="//cdn.programiz.com/sites/all/themes/programiz/assets/appstore.svg" /> </a></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-lg-2 col-md-3 col-xs-6">
+            <div class="footer__link-area">
+                <h4 class="footer__link-area__title">Tutorials</h4>
+
+                <ul class="footer__links">
+                    <li class="footer__links__nodes"><a class="link-node" href="/python-programming" title="Python Tutorials">Python Tutorials</a></li>
+                    <li class="footer__links__nodes"><a class="link-node" href="/c-programming" title="C Tutorials">C Tutorials</a></li>
+                    <li class="footer__links__nodes"><a class="link-node" href="/java-programming" title="Java Tutorials">Java Tutorials</a></li>
+                    <li class="footer__links__nodes"><a class="link-node" href="/kotlin-programming" title="Kotlin Tutorials">Kotlin Tutorials</a></li>
+                    <li class="footer__links__nodes"><a class="link-node" href="/cpp-programming" title="C++ Tutorials">C++ Tutorials</a></li>
+                    <li class="footer__links__nodes"><a class="link-node" href="/swift-programming" title="Swift Tutorials">Swift Tutorials</a></li>
+                    <li class="footer__links__nodes"><a class="link-node" href="/csharp-programming" title="C# Tutorials">C# Tutorials</a></li>
+                    <li class="footer__links__nodes"><a class="link-node" href="/dsa" title="DSA Tutorials">DSA Tutorials</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="col-lg-2  col-md-3 col-xs-6">
+            <div class="footer__link-area">
+                <h4 class="footer__link-area__title">Examples</h4>
+
+                <ul class="footer__links">
+                    <li class="footer__links__nodes"><a class="link-node" href="/python-programming/examples" title="Python Examples">Python Examples</a></li>
+                    <li class="footer__links__nodes"><a class="link-node" href="/c-programming/examples" title="C Examples">C Examples</a></li>
+                    <li class="footer__links__nodes"><a class="link-node" href="/java-programming/examples" title="Java Examples">Java Examples</a></li>
+                    <li class="footer__links__nodes"><a class="link-node" href="/kotlin-programming/examples" title="Kotlin Examples">Kotlin Examples</a></li>
+                    <li class="footer__links__nodes"><a class="link-node" href="/cpp-programming/examples" title="C++ Examples">C++ Examples</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="col-lg-2 col-md-3 col-xs-6">
+            <div class="footer__link-area">
+                <h4 class="footer__link-area__title">Company</h4>
+
+                <ul class="footer__links">
+                    <li class="footer__links__nodes"><a class="link-node" href="/about-us" title="About us">About</a></li>
+                    <li class="footer__links__nodes"><a class="link-node" href="/advertise" title="Advertise with us">Advertising</a></li>
+                    <li class="footer__links__nodes"><a class="link-node" href="/contact" title="Contact us">Contact</a></li>
+                    <li class="footer__links__nodes"><a title="Blog" href="/blog" class="link-node">Blog</a></li>
+            </div>
+        </div>
+
+        <div class="col-lg-2 col-md-3 col-xs-6">
+            <div class="footer__link-area">
+                <h4 class="footer__link-area__title">Legal</h4>
+
+                <ul class="footer__links">
+                    <li class="footer__links__nodes"><a id="ot-sdk-btn" class="ot-sdk-show-settings" style="padding:0; border:none; color: #d3dce6;background-color:transparent;text-decoration: none;text-align:left;font-size:14px;">Change Ad Consent</a></li>
+                    <li class="footer__links__nodes"><a class="link-node" href="/privacy-policy" title="Privacy Policy">Privacy Policy</a></li>
+                    <li class="footer__links__nodes"><a class="link-node" href="/terms-of-use" title="Terms &amp; Conditions">Terms &amp; Conditions</a></li>
+                    <li class="footer__links__nodes"><a class="link-node" href="/app-privacy-policy" title="App's Privacy Policy">App&#39;s Privacy Policy</a></li>
+                    <li class="footer__links__nodes"><a class="link-node" href="/app-toc" title="App's Terms &amp; Conditions">App&#39;s Terms &amp; Conditions</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="sp-brand-area d-block d-md-none">
+        <div class="d-flex justify-content-center"><img class="sp-brand-area__logo" src="//cdn.programiz.com/sites/all/themes/programiz/assets/logo_white.svg" /></div>
+
+        <div class="d-flex justify-content-center">
+            <div class="footer__vendor-btn__row"><a href="https://play.google.com/store/apps/details?id=com.programiz.learnpython&amp;referrer=utm_campaign%3Dprogramiz-footer%26utm_source%3Dprogramiz-website" title="Learn Python: Programiz on Play Store"><img class="app-download-btn app-download-btn--offset" src="//cdn.programiz.com/sites/all/themes/programiz/assets/playstore.svg" /> </a></div>
+
+            <div class="footer__vendor-btn__row"><a href="https://apps.apple.com/app/apple-store/id1472188189?pt=120228772&amp;ct=programiz-footer&amp;mt=8" title="Learn Python: Programiz on App Store"><img class="app-download-btn" src="//cdn.programiz.com/sites/all/themes/programiz/assets/appstore.svg" /> </a></div>
+        </div>
+    </div>
+
+    <div class="footer__end">
+        <p class="copyright-text">&copy; Parewa Labs Pvt. Ltd. All rights reserved.</p>
+
+        <div class="social-icons"><a class="social-icons__links" href="https://www.facebook.com/programiz" title="Programiz on Facebook"><svg class="programiz-icon programiz-icon--small">
+                    <use xlink:href="/sites/all/themes/programiz/assets/feather-sprite.svg#facebook"></use>
+                </svg> </a> <a class="social-icons__links" href="https://www.instagram.com/_programiz/" title="Programiz on Instagram"> <svg class="programiz-icon programiz-icon--small">
+                    <use xlink:href="/sites/all/themes/programiz/assets/feather-sprite.svg#instagram"></use>
+                </svg> </a> <a class="social-icons__links" href="https://www.linkedin.com/company/programiz" title="Programiz on Linkedin"> <svg class="programiz-icon programiz-icon--small ">
+                    <use xlink:href="/sites/all/themes/programiz/assets/feather-sprite.svg#linkedin"></use>
+                </svg> </a> <a class="social-icons__links" href="https://twitter.com/programiz" title="Programiz on Twitter"> <svg class="programiz-icon programiz-icon--small">
+                    <use xlink:href="/sites/all/themes/programiz/assets/feather-sprite.svg#twitter"></use>
+                </svg> </a></div>
+    </div>
+</div>
+        </footer>
+  </main>
+    </body>
+
+</html>

@@ -40,7 +40,15 @@ class ArticleAdmin(admin.ModelAdmin):
     apercu_contenu.short_description = 'Aperçu du contenu'
 
 
+class ScrapyItemAdmin(admin.ModelAdmin):
+    # Configuration de la liste d'articles
+    list_display = ('unique_id', 'data', 'date')
+    list_filter = ('data', 'date',)
+    date_hierarchy = 'date'
+    ordering = ('date',)
+
+
 admin.site.register(Categorie)
 admin.site.register(Article, ArticleAdmin)
 admin.site.register(Contact)
-admin.site.register(ScrapyItem)
+admin.site.register(ScrapyItem, ScrapyItemAdmin)

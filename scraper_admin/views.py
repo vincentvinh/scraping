@@ -72,11 +72,14 @@ def voir_contacts(request):
 
 
 @csrf_exempt
-@require_http_methods(['POST', 'GET'])  # only get and post
+@require_http_methods(['GET', 'POST'])  # only get and post
 def launch_spider(request):
+    pprint(request.method)
+    scrapy_items = ScrapyItem.objects.all()
     if request.method == 'POST':
+        pprint('1')
         url = request.POST.get('url', None)  # take url comes from client. (From an input may be?)
-
+        pprint(url)
         if not url:
             return JsonResponse({'error': 'Missing  args'})
 
@@ -93,27 +96,24 @@ def launch_spider(request):
 
         scrapyd.schedule('default', 'crawler',
                                 settings=settings, url=url, domain=domain)
-        status = 'post success'
-        return render(
-                request,
-                'scraper_admin/launch_spider.html',
-                {'scrapys': ScrapyItem.objects.all(), 'status': status}
-            )
+
     elif request.method == 'GET':
         # We were passed these from past request above. Remember ?
         # They were trying to survive in client side.
         # Now they are here again, thankfully. <3
         # We passed them back to here to check the status of crawling
         # And if crawling is completed, we respond back with a crawled data.
+        pprint('2')
         task_id = request.GET.get('task_id', None)
         unique_id = request.GET.get('unique_id', None)
         status = 'empty'
 
         if not task_id or not unique_id:
+
             return render(
                 request,
                 'scraper_admin/launch_spider.html',
-                {'scrapys': ScrapyItem.objects.all()}
+                {'scrapys': scrapy_items}
             )
 
         # Here we check status of crawling that just started a few seconds ago.
@@ -129,7 +129,7 @@ def launch_spider(request):
                 return render(
                     request,
                     'scraper_admin/launch_spider.html',
-                    {'scrapys': ScrapyItem.objects.all(), 'status': status, 'data': item.to_dict['data']}
+                    {'scrapys': scrapy_items, 'status': status}
                 )
             except Exception as e:
                 return JsonResponse({'error': str(e)})
@@ -138,14 +138,20 @@ def launch_spider(request):
             return render(
                 request,
                 'scraper_admin/launch_spider.html',
-                {'scrapys': ScrapyItem.objects.all(), 'status': status}
+                {'scrapys': scrapy_items, 'status': status}
             )
     else:
         return render(
             request,
             'scraper_admin/launch_spider.html',
-            {'scrapys': ScrapyItem.objects.all()}
+            {'scrapys': scrapy_items}
         )
+    status = 'get success'
+    return render(
+        request,
+        'scraper_admin/launch_spider.html',
+        {'scrapys': scrapy_items, 'status': status}
+    )
 
 
 
