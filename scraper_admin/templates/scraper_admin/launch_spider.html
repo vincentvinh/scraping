@@ -45,14 +45,14 @@ table {
 <div class="container">
 	{% if status %}
 	<div class="jumbotron" style="background-color:  #1a75ff;height: 30px;" id="hed">
-		<center><h1 style="margin-top: -30px;color:white;" class="glyphicon glyphicon-shopping-cart">
+		<center><h1 style="margin-top: -30px;color:white;">
 			{{status}}</h1></center>
 	</div>
 	{% endif %}
 	<div class="scrap">
 		<form action="{% url 'launch_spider' %}" method="POST">
 			{% csrf_token %}
-			<h3>Please insert the valid link Eg:</h3><br>
+			<h3>Please insert a valid web link like "https://www.programiz.com/python-programming/if-elif-else":</h3><br>
 			<input type="text" name="url" style="width: 1000;height: 40" placeholder="Insert the link"><br>
 			<button class="btn btn-success">Submit</button>&ensp;
 		</form>
@@ -60,10 +60,8 @@ table {
 	<table 	width="200" class="table table-bordered table-hover table-striped">
 
 		{% for scrapyitem in scrapys %}
-		<h2>{{ scrapyitem.unique_id }}</h2>
-		Adresse : {{ scrapyitem.data|linebreaks }}<br/>
-		<img src="{{ scrapyitem.data }}"/>
-		{{ scrapyitem.date }}
+		<h2>{{ scrapyitem.alt }}</h2>
+		Adresse : {{ scrapyitem.url|linebreaks }}<br/>
 		{% endfor %}
 
 	</table>

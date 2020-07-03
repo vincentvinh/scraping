@@ -6,8 +6,6 @@ from django.core.validators import URLValidator
 from django.http import JsonResponse
 from django.views.decorators.csrf import csrf_exempt
 from django.views.decorators.http import require_http_methods
-
-from .forms import ContactForm, NouveauContactForm
 from django.shortcuts import render
 from scrapyd_api import ScrapydAPI
 from pprint import pprint
@@ -21,54 +19,6 @@ scrapyd = ScrapydAPI('http://localhost:6800')
 class SchedulingError(Exception):
     def __str__(self):
         return 'scheduling error'
-
-
-def contact(request):
-    # Construire le formulaire, soit avec les données postées,
-    # soit vide si l'utilisateur accède pour la première fois
-    # à la page.
-    form = ContactForm(request.POST or None)
-    # Nous vérifions que les données envoyées sont valides
-    # Cette méthode renvoie False s'il n'y a pas de données
-    # dans le formulaire ou qu'il contient des erreurs.
-    if form.is_valid():
-        # Ici nous pouvons traiter les données du formulaire
-        sujet = form.cleaned_data['sujet']
-        message = form.cleaned_data['message']
-        envoyeur = form.cleaned_data['envoyeur']
-        renvoi = form.cleaned_data['renvoi']
-
-        # Nous pourrions ici envoyer l'e-mail grâce aux données
-        # que nous venons de récupérer
-        envoi = True
-
-    # Quoiqu'il arrive, on affiche la page du formulaire.
-    return render(request, 'scraper_admin/contact.html', locals())
-
-
-def nouveau_contact(request):
-    sauvegarde = False
-    form = NouveauContactForm(request.POST or None, request.FILES)
-    if form.is_valid():
-        contact = Contact()
-        contact.nom = form.cleaned_data["nom"]
-        contact.adresse = form.cleaned_data["adresse"]
-        contact.photo = form.cleaned_data["photo"]
-        contact.save()
-        sauvegarde = True
-
-    return render(request, 'scraper_admin/contact.html', {
-        'form': form,
-        'sauvegarde': sauvegarde
-    })
-
-
-def voir_contacts(request):
-    return render(
-        request,
-        'scraper_admin/image.html',
-        {'contacts': Contact.objects.all()}
-    )
 
 
 @csrf_exempt
@@ -95,7 +45,7 @@ def launch_spider(request):
         }
 
         scrapyd.schedule('default', 'crawler',
-                                settings=settings, url=url, domain=domain)
+                         settings=settings, url=url, domain=domain)
 
     elif request.method == 'GET':
         # We were passed these from past request above. Remember ?
@@ -106,10 +56,8 @@ def launch_spider(request):
         pprint('2')
         task_id = request.GET.get('task_id', None)
         unique_id = request.GET.get('unique_id', None)
-        status = 'empty'
 
         if not task_id or not unique_id:
-
             return render(
                 request,
                 'scraper_admin/launch_spider.html',
@@ -152,7 +100,6 @@ def launch_spider(request):
         'scraper_admin/launch_spider.html',
         {'scrapys': scrapy_items, 'status': status}
     )
-
 
 
 def chart(request):
