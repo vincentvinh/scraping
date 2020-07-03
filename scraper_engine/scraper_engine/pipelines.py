@@ -6,7 +6,7 @@
 
 # useful for handling different item types with a single interface
 import json
-from scraper_admin.models import ScrapyItem, Contact
+from scraper_admin.models import ScrapyItem, ScrapyOrder
 
 
 class ContactPipeline(object):
@@ -22,18 +22,17 @@ class ContactPipeline(object):
 
     def close_spider(self, spider):
         # And here we are saving our crawled data with django models.
-        item = ScrapyItem()
-        item.unique_id = self.unique_id
-        item.data = json.dumps(self.items)
-        item.save()
+        item_order = ScrapyOrder()
+        item_order.unique_id = self.unique_id
+        item_order.data = json.dumps(self.items)
+        item_order.save()
 
     def process_item(self, item, spider):
         self.items.append(item['url'])
 
-        item_contact = Contact()
-        item_contact.nom = self.unique_id
-        item_contact.photo = item['url']
-        item_contact.adresse = 'annecy'
-        item_contact.save()
+        item_scrapy = ScrapyItem()
+        item_scrapy.alt = self.unique_id
+        item_scrapy.url = item['url']
+        item_scrapy.save()
         return item
 

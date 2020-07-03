@@ -12,7 +12,7 @@ from django.shortcuts import render
 from scrapyd_api import ScrapydAPI
 from pprint import pprint
 
-from .models import Contact, ScrapyItem
+from .models import ScrapyOrder, ScrapyItem
 
 # connect scrapyd service
 scrapyd = ScrapydAPI('http://localhost:6800')
